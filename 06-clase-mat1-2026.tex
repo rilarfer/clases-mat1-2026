@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+
+\section*{4. Evaluación de Límites y el Teorema del Valor Intermedio}
+
+\textbf{Objetivos de Aprendizaje}
+\begin{itemize}
+    \item Calcular límites de funciones utilizando enfoques algebraicos.
+    \item Comprender el Teorema del Valor Intermedio (TVI) y determinar si se aplica a una función o situación contextual.
+    \item Usar el TVI para determinar si una función tiene un cero.
+\end{itemize}
+
+\noindent \textbf{1.} Calcule los siguientes límites. Use álgebra, según sea necesario, para simplificar una expresión antes de calcular el límite.
+\begin{enumerate}[label=(\alph*)]
+    \item $\lim_{z\to1}\frac{z^2+z-2}{z-2}$
+    \item $\lim_{u\to2}\frac{u^2+u-2}{u-1}$
+    \item $\lim_{h\to0}\frac{\sqrt{7h+9}-3}{h}$
+    \item $\lim_{t\to-1}\frac{t^2+3t+2}{t^2-1}$
+    \item $\lim_{w\to-2}\frac{w+2}{\sqrt{w^2+5}-3}$
+    \item $\lim_{x\to2}\frac{x^3-8}{x-2}$
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \textbf{2.} En cada inciso, si es posible, dibuje una función continua $f$ definida en $[-4, 3]$ que tenga las tres propiedades dadas. Si es imposible, ¿sería posible si $f$ no tuviera que ser continua?
+\begin{enumerate}[label=(\alph*)]
+    \item $f(-4)=2$, $f(3)=5$, $f$ no tiene ceros en $[-4,3]$.
+    \item $f(-4)=2$, $f(3)=5$, $f$ tiene un cero en $[-4,3]$.
+    \item $f(-4)=2$, $f(3)=-1$, $f$ no tiene ceros en $[-4,3]$.
+    \item $f(-4)=2$, $f(3)=-1$, $f$ no alcanza el valor 1 en $[-4,3]$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \fbox{
+\begin{minipage}{\textwidth}
+\textbf{El Teorema del Valor Intermedio (TVI) para Funciones Continuas} \\
+Si $f$ es una función continua en un intervalo cerrado $[a, b]$, y si $y_0$ es cualquier valor entre $f(a)$ y $f(b)$, entonces $f(c)=y_0$ para algún $c$ en $[a, b]$.
+\end{minipage}
+}
+
+\vspace{0.4cm}
+\noindent Proporcione una ilustración del TVI y describa en palabras lo que significa geométricamente.
+
+\vspace{0.5cm}
+
+\noindent \textbf{3.} Determine si cada una de las siguientes afirmaciones debe ser verdadera o si podría ser falsa.
+\begin{enumerate}[label=(\alph*)]
+    \item Alguna vez mediste exactamente 1 metro de altura.
+    \item En algún momento desde que naciste, tu peso (en libras) fue igual a tu altura (en pulgadas).
+    \item En una temporada anterior, la UNI se enfrentó a la UNAN en baloncesto masculino y ganó. Al medio tiempo, UNI tenía 30 puntos. Entonces, según el Teorema del Valor Intermedio, hubo un momento durante el juego en el que UNI tuvo exactamente 25 puntos.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \textbf{4.} En cada inciso a continuación, use el Teorema del Valor Intermedio para sacar sus conclusiones.
+\begin{enumerate}[label=(\alph*)]
+    \item ¿Tiene la ecuación $x^3+2x^2-x=1$ una solución entre $x=0$ y $x=1$?
+    \item Muestre que la ecuación $-x^2+6x-7=0$ tiene una solución entre $x=0$ y $x=5$. (\textit{¡Bono! Muestre que hay dos soluciones entre $x=0$ y $x=5$}).
+\end{enumerate}
+
+\end{document}

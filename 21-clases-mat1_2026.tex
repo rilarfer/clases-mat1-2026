@@ -1,0 +1,187 @@
+\documentclass[11pt,paper=a4,answers, addpoints]{exam}
+\usepackage{graphicx,lastpage}
+\usepackage{upgreek}
+\usepackage{censor}
+\censorruledepth=-.2ex
+\censorruleheight=.1ex
+\hyphenpenalty 10000
+
+\usepackage[paperheight=10.5in,paperwidth=8.27in,bindingoffset=0in,left=0.8in,right=1in, top=1in,bottom=1in,headsep=.5\baselineskip]{geometry}
+
+\flushbottom
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\renewcommand\ULthickness{2pt} 
+\setlength\ULdepth{1.5ex}
+\renewcommand{\baselinestretch}{1}
+\pagestyle{empty}
+
+\pagestyle{headandfoot}
+\headrule
+\newcommand{\continuedmessage}{%
+  \ifcontinuation{\footnotesize Pregunta \ContinuedQuestion\ continua\ldots}{}%
+}
+\runningheader{\footnotesize Departamento de Matemática}
+{\footnotesize Matemática I}
+{\footnotesize Página \thepage\ de \numpages}
+\footrule
+\footer{\footnotesize }
+{}
+{\ifincomplete{\footnotesize Pregunta \IncompleteQuestion\ continúa en la siguiente página \ldots}
+  {\iflastpage{\footnotesize Final del sistemático}{\footnotesize Por favor vea la siguiente página\ldots}}}
+
+\usepackage{amsfonts,amsmath}
+\usepackage{cleveref}
+\crefname{figure}{figure}{figures}
+\crefname{question}{question}{questions}
+\renewcommand\thequestion{\arabic{question}}
+\renewcommand{\questionlabel}{\thequestion)}
+\renewcommand{\questionshook}{%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\labelwidth}{-\labelsep}%
+}
+\usepackage{amsmath,multicol}
+\decimalpoint
+\nopointsinmargin
+\pointpoints{Punto}{Punto}
+
+\marginpointname{\points}
+\pointformat{\boldmath\themarginpoints}
+\bracketedpoints
+\usepackage{xparse}
+\usepackage{comment}
+
+\pointpoints{punto}{puntos}
+\bonuspointpoints{punto extra}{puntos extra}
+ 
+\totalformat{Pregunta \thequestion: \totalpoints puntos}
+ 
+\hqword{Pregunta}
+\hpgword{Página}
+\hpword{Puntos}
+\hsword{Puntos obtenidos}
+\htword{Total}
+\usepackage{color}
+
+\usepackage{mathrsfs}
+\newcommand{\Laplace}[1]{\ensuremath{\mathscr{L}{\left\lbrace #1\right\rbrace}}}
+\newcommand{\InvLap}[1]{\ensuremath{\mathscr{L}^{-1}{\left\lbrace #1\right\rbrace}}}
+\usepackage{physics}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% --- CONFIGURACIÓN DEL FONDO (SOLO PRIMERA PÁGINA) ---
+\usepackage{eso-pic}
+\newcommand\FondoPortada{%
+  \AddToShipoutPictureBG*{ % El asterisco hace que solo sea en la página donde se invoca
+    \AtPageLowerLeft{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{fondo.pdf}%
+    }%
+  }%
+}
+% --------------------------------------------------
+
+\begin{document}
+\FondoPortada % Esto activa el fondo solo para esta página
+\noprintanswers % Modificado según tu preferencia estricta de no mostrar soluciones por defecto
+\shadedsolutions
+\thispagestyle{empty}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución:} }
+\renewcommand{\thepartno}{\arabic{partno}}
+
+\begin{center}
+{\textbf{Tercer Sistemático - Derivación Implícita}}
+\end{center}
+\begin{minipage}[t]{.6\textwidth}%
+  {\bfseries Nombres}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+  {\bfseries Apellidos}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+    {\bfseries Docente}: Ricardo Largaespada \par
+  \vspace{1ex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{.4\textwidth}%
+  {\bfseries Curso}: Matemática I\par
+  \vspace{1ex}
+  {\bfseries Fecha}: 24 de abril 2026 \par
+  \vspace{1ex}
+  {\bfseries Grupo}: 1M6-SIS\par
+  \vspace{1ex}
+\end{minipage}%
+\begin{center}
+  \rule{\textwidth}{1pt}
+\end{center}
+
+\noindent\underline{\sc Instrucciones a estudiantes}
+\begin{enumerate}
+\item Este sistemático contiene {\bf TRES (3)} preguntas, las cuales debes resolver individualmente.
+\item Puedes utilizar calculadora. Sin embargo, debes escribir los pasos del trabajo.
+\item Entrega todo el trabajo adicional en páginas rotuladas.
+\end{enumerate}
+
+\rule[1ex]{\textwidth}{1pt}
+
+\qformat{Pregunta \thequestion: \thequestiontitle\dotfill\thepoints}
+\pointname{\%}
+
+\begin{questions}
+
+\titledquestion{Optimización: Construcción de una Caja}[30]
+Se dispone de una lámina de cartón cuadrada de $30 \text{ cm}$ de lado. Se desea construir una caja rectangular \textbf{sin tapa} cortando cuadrados iguales de lado $x$ en cada una de las cuatro esquinas y doblando los bordes hacia arriba, como se muestra en la figura adjunta.
+\begin{parts}
+    \part Exprese el volumen $V$ de la caja en función de la longitud del corte $x$.
+    \part Determine el dominio físico de la función volumen y encuentre la longitud $x$ que maximiza dicho volumen.
+\end{parts}
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.15]
+        \draw[thick] (0,0) -- (30,0) -- (30,30) -- (0,30) -- cycle;
+        \draw[fill=gray!20] (0,0) rectangle (5,5);
+        \draw[fill=gray!20] (25,0) rectangle (30,5);
+        \draw[fill=gray!20] (25,25) rectangle (30,30);
+        \draw[fill=gray!20] (0,25) rectangle (5,30);
+        \draw[dashed] (5,5) -- (25,5);
+        \draw[dashed] (5,25) -- (25,25);
+        \draw[dashed] (5,5) -- (5,25);
+        \draw[dashed] (25,5) -- (25,25);
+        \draw[<->] (0,-3) -- (30,-3) node[midway, below] {$30 \text{ cm}$};
+        \draw[<->] (-3,0) -- (-3,30) node[midway, left] {$30 \text{ cm}$};
+        \draw[<->] (0,6) -- (5,6) node[midway, above] {$x$};
+        \draw[<->] (6,0) -- (6,5) node[midway, right] {$x$};
+    \end{tikzpicture}
+\end{center}
+
+\begin{solution}
+Al retirar los cuadrados de las esquinas, la base de la caja resulta ser un cuadrado de lado $(30-2x)$ y la altura de la caja es $x$. El volumen se define como $V(x) = x(30-2x)^2 = 4x^3 - 120x^2 + 900x$. Para que la caja sea físicamente realizable, el corte debe cumplir $0 < x < 15$. Derivando para optimizar, obtenemos $V'(x) = 12x^2 - 240x + 900$. Al igualar a cero y simplificar, resolvemos $x^2 - 20x + 75 = 0$, cuyas raíces son $x = 15$ (que anula el volumen) y $x = 5$. Mediante el criterio de la segunda derivada, $V''(5) = 24(5) - 240 = -120$, confirmamos que $x=5 \text{ cm}$ produce el volumen máximo de $2000 \text{ cm}^3$.
+\end{solution}
+
+\titledquestion{Continuidad y Regla de L'Hôpital}[35]
+Determine los valores de las constantes $a$ y $b$ que hacen que la siguiente función sea continua en todo su dominio, justificando sus límites mediante la regla de L'Hôpital:
+\[
+f(x) = \begin{cases} 
+\dfrac{\sin(3x)}{bx} & \text{si } x < 0 \\ 
+1 & \text{si } x = 0 \\ 
+\dfrac{e^{ax} - 1}{2x} & \text{si } x > 0 
+\end{cases}
+\]
+
+\begin{solution}
+Para garantizar la continuidad en $x=0$, los límites laterales deben ser iguales al valor de la función, es decir, $f(0)=1$. Para el límite por la izquierda, evaluamos $\lim_{x \to 0^-} \frac{\sin(3x)}{bx}$, que presenta la forma $\frac{0}{0}$. Aplicando L'Hôpital, derivamos obteniendo $\lim_{x \to 0^-} \frac{3\cos(3x)}{b} = \frac{3}{b}$. Igualando a 1, resulta $b=3$. Para el límite por la derecha, $\lim_{x \to 0^+} \frac{e^{ax}-1}{2x}$ también es de la forma $\frac{0}{0}$. Por L'Hôpital obtenemos $\lim_{x \to 0^+} \frac{ae^{ax}}{2} = \frac{a}{2}$. Igualando a 1, obtenemos $a=2$.
+\end{solution}
+
+\titledquestion{Análisis de Curvas}[35]
+Sea la función definida por $g(x) = x^4 - 4x^3 + 10$. Realice un estudio detallado para determinar:
+\begin{parts}
+    \part Los intervalos de crecimiento, decrecimiento y los puntos críticos.
+    \part Los intervalos de concavidad y los puntos de inflexión.
+\end{parts}
+
+\begin{solution}
+Calculamos la primera derivada $g'(x) = 4x^3 - 12x^2 = 4x^2(x-3)$. Los puntos críticos ocurren en $x=0$ y $x=3$. Al analizar los signos, observamos que $g'(x) < 0$ en $(-\infty, 0)$ y $(0, 3)$, por lo que la función decrece en $(-\infty, 3)$. Dado que $g'(x) > 0$ en $(3, \infty)$, la función crece en dicho intervalo, presentando un mínimo relativo en $(3, -17)$. Para la concavidad, $g''(x) = 12x^2 - 24x = 12x(x-2)$. Los cambios de signo ocurren en $x=0$ y $x=2$. La curva es cóncava hacia arriba en $(-\infty, 0) \cup (2, \infty)$ y cóncava hacia abajo en $(0, 2)$, lo que confirma puntos de inflexión en $(0, 10)$ y $(2, -6)$.
+\end{solution}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,198 @@
+\documentclass[11pt,paper=a4,answers, addpoints]{exam}
+\usepackage{graphicx,lastpage}
+\usepackage{upgreek}
+\usepackage{censor}
+\censorruledepth=-.2ex
+\censorruleheight=.1ex
+\hyphenpenalty 10000
+
+\usepackage[paperheight=10.5in,paperwidth=8.27in,bindingoffset=0in,left=0.8in,right=1in, top=1in,bottom=1in,headsep=.5\baselineskip]{geometry}
+
+\flushbottom
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\renewcommand\ULthickness{2pt} 
+\setlength\ULdepth{1.5ex}
+\renewcommand{\baselinestretch}{1}
+\pagestyle{empty}
+
+\pagestyle{headandfoot}
+\headrule
+\newcommand{\continuedmessage}{%
+  \ifcontinuation{\footnotesize Pregunta \ContinuedQuestion\ continua\ldots}{}%
+}
+\runningheader{\footnotesize Departamento de Matemática}
+{\footnotesize Matemática I}
+{\footnotesize Página \thepage\ de \numpages}
+\footrule
+\footer{\footnotesize }
+{}
+{\ifincomplete{\footnotesize Pregunta \IncompleteQuestion\ continúa en la siguiente página \ldots}
+  {\iflastpage{\footnotesize Final del sistemático}{\footnotesize Por favor vea la siguiente página\ldots}}}
+
+\usepackage{amsfonts,amsmath}
+\usepackage{cleveref}
+\crefname{figure}{figure}{figures}
+\crefname{question}{question}{questions}
+\renewcommand\thequestion{\arabic{question}}
+\renewcommand{\questionlabel}{\thequestion)}
+\renewcommand{\questionshook}{%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\labelwidth}{-\labelsep}%
+}
+\usepackage{amsmath,multicol}
+\decimalpoint
+\nopointsinmargin
+\pointpoints{Punto}{Punto}
+
+\marginpointname{\points}
+\pointformat{\boldmath\themarginpoints}
+\bracketedpoints
+\usepackage{xparse}
+\usepackage{comment}
+
+\pointpoints{punto}{puntos}
+\bonuspointpoints{punto extra}{puntos extra}
+ 
+\totalformat{Pregunta \thequestion: \totalpoints puntos}
+ 
+\hqword{Pregunta}
+\hpgword{Página}
+\hpword{Puntos}
+\hsword{Puntos obtenidos}
+\htword{Total}
+\usepackage{color}
+
+\usepackage{mathrsfs}
+\newcommand{\Laplace}[1]{\ensuremath{\mathscr{L}{\left\lbrace #1\right\rbrace}}}
+\newcommand{\InvLap}[1]{\ensuremath{\mathscr{L}^{-1}{\left\lbrace #1\right\rbrace}}}
+\usepackage{physics}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% --- CONFIGURACIÓN DEL FONDO (SOLO PRIMERA PÁGINA) ---
+\usepackage{eso-pic}
+\newcommand\FondoPortada{%
+  \AddToShipoutPictureBG*{ % El asterisco hace que solo sea en la página donde se invoca
+    \AtPageLowerLeft{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{fondo.pdf}%
+    }%
+  }%
+}
+% --------------------------------------------------
+
+\begin{document}
+\FondoPortada % Esto activa el fondo solo para esta página
+\noprintanswers % Modificado según tu preferencia estricta de no mostrar soluciones por defecto
+\shadedsolutions
+\thispagestyle{empty}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución:} }
+\renewcommand{\thepartno}{\arabic{partno}}
+
+\begin{center}
+{\textbf{Tercer Sistemático - Derivación Implícita}}
+\end{center}
+\begin{minipage}[t]{.6\textwidth}%
+  {\bfseries Nombres}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+  {\bfseries Apellidos}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+    {\bfseries Docente}: Ricardo Largaespada \par
+  \vspace{1ex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{.4\textwidth}%
+  {\bfseries Curso}: Matemática I\par
+  \vspace{1ex}
+  {\bfseries Fecha}: 24 de abril 2026 \par
+  \vspace{1ex}
+  {\bfseries Grupo}: 1M6-SIS\par
+  \vspace{1ex}
+\end{minipage}%
+\begin{center}
+  \rule{\textwidth}{1pt}
+\end{center}
+
+\noindent\underline{\sc Instrucciones a estudiantes}
+\begin{enumerate}
+\item Este sistemático contiene {\bf TRES (3)} preguntas, las cuales debes resolver individualmente.
+\item Puedes utilizar calculadora. Sin embargo, debes escribir los pasos del trabajo.
+\item Entrega todo el trabajo adicional en páginas rotuladas.
+\end{enumerate}
+
+\rule[1ex]{\textwidth}{1pt}
+
+\qformat{Pregunta \thequestion: \thequestiontitle\dotfill\thepoints}
+\pointname{\%}
+
+\begin{questions}
+
+\titledquestion{Regla del Producto}[30]
+Determine la expresión para la derivada $\frac{dy}{dx}$ de la curva definida por la ecuación:
+\[ x^3y^2 - 5x^2y + x = 1 \]
+
+\begin{solution}
+Para hallar la derivada, procedemos a derivar de forma implícita con respecto a $x$ en ambos miembros de la igualdad. Al aplicar la regla del producto en el primer término, obtenemos $3x^2y^2 + 2x^3y \frac{dy}{dx}$. De igual manera, al tratar el segundo término y considerando el signo negativo, resulta $-10xy - 5x^2 \frac{dy}{dx}$. La derivada de $x$ es la unidad, mientras que la constante del segundo miembro se anula. Al agrupar los términos que contienen el factor $\frac{dy}{dx}$ en el lado izquierdo, la ecuación se transforma en $(2x^3y - 5x^2)\frac{dy}{dx} = 10xy - 3x^2y^2 - 1$. Finalmente, al despejar el término de la derivada, llegamos a la solución $\frac{dy}{dx} = \frac{10xy - 3x^2y^2 - 1}{2x^3y - 5x^2}$.
+\end{solution}
+
+\titledquestion{Geometría: Lemniscata de Bernoulli}[35]
+Dada la Lemniscata de Bernoulli definida por $2(x^2+y^2)^2 = 25(x^2-y^2)$, encuentre la ecuación de la recta tangente en el punto $(3, 1)$.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-4.5, xmax=4.5,
+        ymin=-3.5, ymax=3.5,
+        axis equal image,
+        width=8cm,
+        grid=major,
+        grid style={dashed, gray!60},
+        xtick={-4,-3,-2,-1,1,2,3,4},
+        ytick={-3,-2,-1,1,2,3},
+        ticklabel style={font=\footnotesize}
+    ]
+    \addplot[domain=0:360, samples=200, thick, blue] 
+    ({sqrt(12.5)*cos(x)/(1+sin(x)^2)}, {sqrt(12.5)*sin(x)*cos(x)/(1+sin(x)^2)});
+    \addplot[mark=*, red] coordinates {(3,1)} node[above right, black] {$(3,1)$};
+    \end{axis}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-3.5, xmax=3.5,
+        ymin=-3.5, ymax=3.5,
+        axis equal image,
+        width=8cm,
+        grid=major,
+        grid style={dashed, gray!60},
+        xtick={-3,-2,-1,1,2,3},
+        ytick={-3,-2,-1,1,2,3},
+        ticklabel style={font=\footnotesize}
+    ]
+    % Elipse rotada x^2 + xy + y^2 = 3 en forma paramétrica
+    \addplot[domain=0:360, samples=200, thick, blue] 
+    ({cos(x) - sqrt(3)*sin(x)}, {cos(x) + sqrt(3)*sin(x)});
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+Derivamos implícitamente aplicando la regla de la cadena en el lado izquierdo, lo que nos da $4(x^2+y^2)(2x + 2y y') = 25(2x - 2y y')$. En lugar de despejar $y'$ algebraicamente, resulta más eficiente evaluar el punto $(3,1)$ de inmediato. Dado que $x^2+y^2=10$ en dicho punto, la expresión se reduce a $40(6 + 2y') = 25(6 - 2y')$, que al simplificarse resulta en $240 + 80y' = 150 - 50y'$. Al agrupar los términos de la derivada, obtenemos $130y' = -90$, por lo que la pendiente es $m = -9/13$. Así, la ecuación de la recta tangente es $y - 1 = -\frac{9}{13}(x - 3)$.
+\end{solution}
+
+\titledquestion{Segunda Derivada: Elipse Rotada}[35]
+Considere la elipse rotada cuya ecuación es $x^2 + xy + y^2 = 3$. 
+\begin{parts}
+    \part Calcule la primera derivada $y'$.
+    \part Demuestre que la segunda derivada se puede simplificar a $\frac{d^2y}{dx^2} = -\frac{18}{(x+2y)^3}$.
+\end{parts}
+
+\begin{solution}
+Para la primera parte, derivamos respecto a $x$ obteniendo $2x + (y + xy') + 2yy' = 0$. Al despejar $y'$, encontramos que $y' = -\frac{2x+y}{x+2y}$. Para la segunda parte, aplicamos la regla del cociente a esta expresión: $y'' = -\frac{(2+y')(x+2y) - (2x+y)(1+2y')}{(x+2y)^2}$. Al expandir el numerador y sustituir $y'$ por su valor original, el numerador se convierte en $\frac{6(x^2+xy+y^2)}{(x+2y)}$. Es aquí donde aplicamos la identidad de la curva original $x^2+xy+y^2=3$, lo que transforma el numerador en $6(3)=18$. Por lo tanto, la segunda derivada simplificada es $y'' = -\frac{18}{(x+2y)^3}$.
+\end{solution}
+
+\end{questions}
+\end{document}

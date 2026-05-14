@@ -1,0 +1,185 @@
+\documentclass[11pt,paper=a4,answers, addpoints]{exam}
+\usepackage{graphicx,lastpage}
+\usepackage{upgreek}
+\usepackage{censor}
+\censorruledepth=-.2ex
+\censorruleheight=.1ex
+\hyphenpenalty 10000
+
+\usepackage[paperheight=10.5in,paperwidth=8.27in,bindingoffset=0in,left=0.8in,right=1in, top=1in,bottom=1in,headsep=.5\baselineskip]{geometry}
+
+\flushbottom
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\renewcommand\ULthickness{2pt} 
+\setlength\ULdepth{1.5ex}
+\renewcommand{\baselinestretch}{1}
+\pagestyle{empty}
+
+\pagestyle{headandfoot}
+\headrule
+\newcommand{\continuedmessage}{%
+  \ifcontinuation{\footnotesize Pregunta \ContinuedQuestion\ continua\ldots}{}%
+}
+\runningheader{\footnotesize Departamento de Matemática}
+{\footnotesize Matemática I}
+{\footnotesize Página \thepage\ de \numpages}
+\footrule
+\footer{\footnotesize }
+{}
+{\ifincomplete{\footnotesize Pregunta \IncompleteQuestion\ continúa en la siguiente página \ldots}
+  {\iflastpage{\footnotesize Final del sistemático}{\footnotesize Por favor vea la siguiente página\ldots}}}
+
+\usepackage{amsfonts,amsmath}
+\usepackage{cleveref}
+\crefname{figure}{figure}{figures}
+\crefname{question}{question}{questions}
+\renewcommand\thequestion{\arabic{question}}
+\renewcommand{\questionlabel}{\thequestion)}
+\renewcommand{\questionshook}{%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\labelwidth}{-\labelsep}%
+}
+\usepackage{amsmath,multicol}
+\decimalpoint
+\nopointsinmargin
+\pointpoints{Punto}{Punto}
+
+\marginpointname{\points}
+\pointformat{\boldmath\themarginpoints}
+\bracketedpoints
+\usepackage{xparse}
+\usepackage{comment}
+
+\pointpoints{punto}{puntos}
+\bonuspointpoints{punto extra}{puntos extra}
+ 
+\totalformat{Pregunta \thequestion: \totalpoints puntos}
+ 
+\hqword{Pregunta}
+\hpgword{Página}
+\hpword{Puntos}
+\hsword{Puntos obtenidos}
+\htword{Total}
+\usepackage{color}
+
+\usepackage{mathrsfs}
+\newcommand{\Laplace}[1]{\ensuremath{\mathscr{L}{\left\lbrace #1\right\rbrace}}}
+\newcommand{\InvLap}[1]{\ensuremath{\mathscr{L}^{-1}{\left\lbrace #1\right\rbrace}}}
+\usepackage{physics}
+
+% --- CONFIGURACIÓN DEL FONDO (SOLO PRIMERA PÁGINA) ---
+\usepackage{eso-pic}
+\newcommand\FondoPortada{%
+  \AddToShipoutPictureBG*{ % El asterisco hace que solo sea en la página donde se invoca
+    \AtPageLowerLeft{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{fondo.pdf}%
+    }%
+  }%
+}
+% --------------------------------------------------
+
+\begin{document}
+\FondoPortada % Esto activa el fondo solo para esta página
+\printanswers
+\shadedsolutions
+\thispagestyle{empty}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución:} }
+\renewcommand{\thepartno}{\arabic{partno}}
+
+\begin{center}
+{\textbf{Segundo Sistemático}}
+\end{center}
+\begin{minipage}[t]{.6\textwidth}%
+  {\bfseries Nombres}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+  {\bfseries Apellidos}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+    {\bfseries Docente}: Ricardo Largaespada \par
+  \vspace{1ex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{.4\textwidth}%
+  {\bfseries Curso}: Matemática I\par
+  \vspace{1ex}
+  {\bfseries Fecha}: 24 de abril 2026 \par
+  \vspace{1ex}
+  {\bfseries Grupo}: 1M6-SIS\par
+  \vspace{1ex}
+\end{minipage}%
+\begin{center}
+  \rule{\textwidth}{1pt}
+\end{center}
+
+\noindent\underline{\sc Instrucciones a estudiantes}
+\begin{enumerate}
+\item Este sistemático contiene {\bf OCHO (8)} preguntas, las cuales debes resolver en grupos de 5 personas.
+\item Puedes utilizar calculadora. Sin embargo, debes escribir los pasos del trabajo.
+\item Entrega todo el trabajo adicional en páginas rotuladas.
+\end{enumerate}
+
+\rule[1ex]{\textwidth}{1pt}
+
+\vspace{0.5cm}
+\begin{center}
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{Pasos Generales para Resolver Problemas de Razones de Cambio Relacionadas}
+    \begin{enumerate}
+        \item Dibuja dos imágenes: una ``instantánea'' de la situación en un momento específico y un diagrama genérico que se aplique en cualquier momento.
+        \item Identifica el objetivo (es decir, la tasa que deseas encontrar).
+        \item Escribe la información que conoces.
+        \item Modela el escenario; es decir, determina ecuaciones que relacionen las variables relevantes. Asegúrate de indicar cualquier suposición que estés haciendo.
+        \item Deriva implícitamente tu modelo para obtener una ecuación que involucre las tasas.
+        \item Sustituye la información de la instantánea y resuelve para la tasa deseada.
+        \item Reflexiona para comprobar que tu respuesta sea razonable.
+    \end{enumerate}
+    \end{minipage}}
+\end{center}
+%\vspace{0.5cm}
+
+\qformat{Pregunta \thequestion: \thequestiontitle\dotfill\thepoints}
+\pointname{\%}
+
+\begin{questions}
+
+\titledquestion{Tanque de Aceite}[12\half]
+Un tanque de aceite en forma de cono invertido tiene una altura de 10 m y un radio de 6 m. Cuando el nivel del aceite tiene 5 m de profundidad, el tanque está goteando aceite por la punta a una tasa de $2\text{ m}^3$ por día. ¿Qué tan rápido está disminuyendo la altura del aceite en el tanque en este momento? \\
+\textit{Nota: El volumen de un cono de radio $r$ y altura $h$ es $V = \frac{1}{3}\pi r^2 h$.}
+%\vspace{6cm}
+
+\titledquestion{Autos en Movimiento}[12\half]
+\begin{parts}
+    \part Dos autos se acercan a una intersección. Un auto rojo, que se acerca desde el norte, viaja a 20 pies por segundo y actualmente se encuentra a 60 pies de la intersección. Un auto azul, que se acerca desde el oeste, viaja a 30 pies por segundo y actualmente se encuentra a 80 pies de la intersección. En este momento, ¿la distancia entre los dos autos está aumentando o disminuyendo? ¿Con qué rapidez?
+%    \vspace{5cm}
+    \part En el mismo momento descrito en (a), un auto verde pasa junto al auto rojo, en dirección opuesta a 20 pies por segundo. En este momento, ¿la distancia entre el auto azul y el auto verde está aumentando o disminuyendo? ¿A qué tasa?
+%    \vspace{5cm}
+\end{parts}
+
+\titledquestion{Cámara de Velocidad Policial}[12\half]
+Una patrulla de policía equipada con una cámara de velocidad en el vehículo conduce por una carretera hacia una intersección a 60 mph y actualmente se encuentra a media milla de la intersección. Un auto verde conduce por una carretera perpendicular hacia la intersección y actualmente se encuentra a dos millas de la intersección. La cámara de velocidad, que mide la tasa a la que cambia la distancia entre el auto verde y la patrulla, marca 70 mph. Si esta es una zona de 60 mph, ¿el conductor del auto verde está excediendo el límite de velocidad?
+%\vspace{6cm}
+
+\titledquestion{Reflector}[12\half]
+Un reflector, que está en el suelo, se encuentra a 100 metros del punto más cercano de una carretera recta. Girando a una tasa constante de $\frac{\pi}{6}$ radianes por segundo, el reflector proyecta un haz de luz que interseca la carretera en un punto. Cuando la luz ilumina un punto en la carretera que está a 200 metros de distancia del reflector, ¿qué tan rápido se desplaza el haz de luz a lo largo de la carretera?
+%\vspace{6cm}
+
+\titledquestion{Corriendo a Clase}[12\half]
+Al mediodía, estás corriendo por el campus y notas que un amigo está a 100 pies al oeste de ti, también corriendo a clase. Si corres hacia el sur a una tasa constante de 450 pies/min y tu amigo corre hacia el norte a una tasa constante de 350 pies/min, ¿qué tan rápido cambia la distancia entre tú y tu amigo a las 12:02 pm?
+%\vspace{6cm}
+
+\titledquestion{Cubo en Crecimiento}[12\half]
+El área superficial de un cubo está aumentando a una tasa de 72 pulgadas cuadradas por segundo. ¿A qué tasa está cambiando el volumen del cubo cuando la longitud de cada arista es de 3 pulgadas?
+%\vspace{7cm}
+
+\titledquestion{Inflando Globos}[12\half]
+Supón que estás usando una bomba para inflar globos. Asume que la bomba tiene un flujo de salida de 50 centímetros cúbicos por segundo y que los globos son esferas con volumen $V=\frac{4}{3}\pi r^3$. ¿Qué tan rápido aumenta el radio cuando el radio del globo es de 5 centímetros?
+%\vspace{7cm}
+
+\titledquestion{Escalera Deslizante}[12\half]
+La parte superior de una escalera se desliza hacia abajo por una pared vertical a una tasa de 0.15 metros por segundo. En el momento en que la parte inferior de la escalera está a 3 metros de la pared, la parte inferior de la escalera se desliza alejándose de la pared a una tasa de 0.2 metros por segundo. ¿Cuánto mide la escalera?
+%\vspace{7cm}
+
+\end{questions}
+
+\end{document}
