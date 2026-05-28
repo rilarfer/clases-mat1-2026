@@ -70,6 +70,7 @@
 \usepackage{physics}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}
 
 % --- CONFIGURACIÓN DEL FONDO (SOLO PRIMERA PÁGINA) ---
 \usepackage{eso-pic}
@@ -91,7 +92,7 @@
 \renewcommand{\thepartno}{\arabic{partno}}
 
 \begin{center}
-{\textbf{Tercer Sistemático - Derivación Implícita}}
+{\textbf{Simulacro Primer Examen Parcial}}
 \end{center}
 \begin{minipage}[t]{.6\textwidth}%
   {\bfseries Nombres}: \makebox[.75\textwidth]{\hrulefill} \par
@@ -105,7 +106,7 @@
 \begin{minipage}[t]{.4\textwidth}%
   {\bfseries Curso}: Matemática I\par
   \vspace{1ex}
-  {\bfseries Fecha}: 24 de abril 2026 \par
+  {\bfseries Fecha}: 13 de mayo 2026 \par
   \vspace{1ex}
   {\bfseries Grupo}: 1M6-SIS\par
   \vspace{1ex}
@@ -114,14 +115,14 @@
   \rule{\textwidth}{1pt}
 \end{center}
 
-\noindent\underline{\sc Instrucciones a estudiantes}
-\begin{enumerate}
-\item Este sistemático contiene {\bf TRES (3)} preguntas, las cuales debes resolver individualmente.
-\item Puedes utilizar calculadora. Sin embargo, debes escribir los pasos del trabajo.
-\item Entrega todo el trabajo adicional en páginas rotuladas.
-\end{enumerate}
+%\noindent\underline{\sc Instrucciones a estudiantes}
+%\begin{enumerate}
+%\item Este sistemático contiene {\bf TRES (3)} preguntas, las cuales debes resolver individualmente.
+%\item Puedes utilizar calculadora. Sin embargo, debes escribir los pasos del trabajo.
+%\item Entrega todo el trabajo adicional en páginas rotuladas.
+%\end{enumerate}
 
-\rule[1ex]{\textwidth}{1pt}
+%\rule[1ex]{\textwidth}{1pt}
 
 \qformat{Pregunta \thequestion: \thequestiontitle\dotfill\thepoints}
 \pointname{\%}
@@ -176,7 +177,9 @@ Sea la función definida por $g(x) = x^4 - 4x^3 + 10$. Realice un estudio detall
 \begin{parts}
     \part Los intervalos de crecimiento, decrecimiento y los puntos críticos.
     \part Los intervalos de concavidad y los puntos de inflexión.
+    \part Bosqueje la gráfica de la función en el intervalo $x \in [-1, 4]$. Asegúrese de rotular correctamente los puntos notables calculados.
 \end{parts}
+\vspace{0.5cm}
 
 \begin{solution}
 Calculamos la primera derivada $g'(x) = 4x^3 - 12x^2 = 4x^2(x-3)$. Los puntos críticos ocurren en $x=0$ y $x=3$. Al analizar los signos, observamos que $g'(x) < 0$ en $(-\infty, 0)$ y $(0, 3)$, por lo que la función decrece en $(-\infty, 3)$. Dado que $g'(x) > 0$ en $(3, \infty)$, la función crece en dicho intervalo, presentando un mínimo relativo en $(3, -17)$. Para la concavidad, $g''(x) = 12x^2 - 24x = 12x(x-2)$. Los cambios de signo ocurren en $x=0$ y $x=2$. La curva es cóncava hacia arriba en $(-\infty, 0) \cup (2, \infty)$ y cóncava hacia abajo en $(0, 2)$, lo que confirma puntos de inflexión en $(0, 10)$ y $(2, -6)$.
