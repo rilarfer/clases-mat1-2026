@@ -1,0 +1,193 @@
+\documentclass[11pt,paper=a4,answers, addpoints]{exam}
+\usepackage{graphicx,lastpage}
+\usepackage{upgreek}
+\usepackage{censor}
+\censorruledepth=-.2ex
+\censorruleheight=.1ex
+\hyphenpenalty 10000
+
+\usepackage[paperheight=10.5in,paperwidth=8.27in,bindingoffset=0in,left=0.8in,right=1in, top=1in,bottom=1in,headsep=.5\baselineskip]{geometry}
+
+\flushbottom
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\renewcommand\ULthickness{2pt} 
+\setlength\ULdepth{1.5ex}
+\renewcommand{\baselinestretch}{1}
+\pagestyle{empty}
+
+\pagestyle{headandfoot}
+\headrule
+\newcommand{\continuedmessage}{%
+  \ifcontinuation{\footnotesize Pregunta \ContinuedQuestion\ continua\ldots}{}%
+}
+\runningheader{\footnotesize Departamento de Matemática}
+{\footnotesize Matemática II}
+{\footnotesize Página \thepage\ de \numpages}
+\footrule
+\footer{\footnotesize }
+{}
+{\ifincomplete{\footnotesize Pregunta \IncompleteQuestion\ continúa en la siguiente página \ldots}
+  {\iflastpage{\footnotesize Final del sistemático}{\footnotesize Por favor vea la siguiente página\ldots}}}
+
+\usepackage{amsfonts,amsmath}
+\usepackage{cleveref}
+\crefname{figure}{figure}{figures}
+\crefname{question}{question}{questions}
+\renewcommand\thequestion{\arabic{question}}
+\renewcommand{\questionlabel}{\thequestion)}
+\renewcommand{\questionshook}{%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\labelwidth}{-\labelsep}%
+}
+\usepackage{amsmath,multicol}
+\decimalpoint
+\nopointsinmargin
+\pointpoints{Punto}{Punto}
+
+\marginpointname{\points}
+\pointformat{\boldmath\themarginpoints}
+\bracketedpoints
+\usepackage{xparse}
+\usepackage{comment}
+
+\pointpoints{punto}{puntos}
+\bonuspointpoints{punto extra}{puntos extra}
+ 
+\totalformat{Pregunta \thequestion: \totalpoints puntos}
+ 
+\hqword{Pregunta}
+\hpgword{Página}
+\hpword{Puntos}
+\hsword{Puntos obtenidos}
+\htword{Total}
+\usepackage{color}
+
+\usepackage{mathrsfs}
+\newcommand{\Laplace}[1]{\ensuremath{\mathscr{L}{\left\lbrace #1\right\rbrace}}}
+\newcommand{\InvLap}[1]{\ensuremath{\mathscr{L}^{-1}{\left\lbrace #1\right\rbrace}}}
+\usepackage{physics}
+
+% --- CONFIGURACIÓN DEL FONDO (SOLO PRIMERA PÁGINA) ---
+\usepackage{eso-pic}
+\newcommand\FondoPortada{%
+  \AddToShipoutPictureBG*{ % El asterisco hace que solo sea en la página donde se invoca
+    \AtPageLowerLeft{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{fondo.pdf}%
+    }%
+  }%
+}
+% --------------------------------------------------
+
+\begin{document}
+\FondoPortada % Esto activa el fondo solo para esta página
+\printanswers
+\shadedsolutions
+\thispagestyle{empty}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución:} }
+\renewcommand{\thepartno}{\arabic{partno}}
+
+\begin{center}
+{\textbf{Sexto Sistemático}}
+\end{center}
+\begin{minipage}[t]{.6\textwidth}%
+  {\bfseries Nombres}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+  {\bfseries Apellidos}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+    {\bfseries Docente}: Ricardo Largaespada \par
+  \vspace{1ex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{.4\textwidth}%
+  {\bfseries Curso}: Matemática II\par
+  \vspace{1ex}
+  {\bfseries Fecha}: 28 de mayo 2026 \par
+  \vspace{1ex}
+  {\bfseries Grupo}: 1M6-SIS\par
+  \vspace{1ex}
+\end{minipage}%
+\begin{center}
+  \rule{\textwidth}{1pt}
+\end{center}
+
+\noindent\underline{\sc Instrucciones a estudiantes}
+\begin{enumerate}
+\item Este sistemático contiene {\bf DOS (2)} preguntas, las cuales debes resolver de manera individual.
+\item Puedes utilizar calculadora. Sin embargo, debes escribir todos los pasos del trabajo de forma clara y ordenada.
+\item Entrega todo el trabajo adicional en páginas rotuladas.
+\end{enumerate}
+
+\rule[1ex]{\textwidth}{1pt}
+\vspace{0.5cm}
+
+\qformat{Pregunta \thequestion: \thequestiontitle\dotfill\thepoints}
+\pointname{\%}
+
+\begin{questions}
+
+\titledquestion{Integración por Partes}[50]
+Calcule la siguiente integral indefinida aplicando el método tabular:
+\[ \int x^4 \sin x \, dx \]
+
+\begin{solution}
+Para resolver esta integral mediante el método tabular, identificamos la función polinómica para derivar sucesivamente hasta llegar a cero ($u = x^4$) y la función trigonométrica para integrar de forma sucesiva ($dv = \sin x \, dx$).
+
+Construimos la tabla de derivadas e integrales con sus signos alternos:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Signo} & \textbf{Derivadas ($u$)} & \textbf{Integrales ($dv$)} \\ \hline
+$+$ & $x^4$   & $\sin x$   \\ \hline
+$-$ & $4x^3$  & $-\cos x$  \\ \hline
+$+$ & $12x^2$ & $-\sin x$  \\ \hline
+$-$ & $24x$   & $\cos x$   \\ \hline
+$+$ & $24$    & $\sin x$   \\ \hline
+$-$ & $0$     & $-\cos x$  \\ \hline
+\end{tabular}
+\end{center}
+
+Multiplicando los elementos en diagonal siguiendo las flechas correspondientes a los signos, obtenemos la solución directa:
+\[ \int x^4 \sin x \, dx = (x^4)(-\cos x) - (4x^3)(-\sin x) + (12x^2)(\cos x) - (24x)(\sin x) + (24)(-\cos x) + C \]
+
+Simplificando los signos de la expresión algebraica:
+\[ \int x^4 \sin x \, dx = -x^4 \cos x + 4x^3 \sin x + 12x^2 \cos x - 24x \sin x - 24 \cos x + C \]
+\end{solution}
+
+\vspace{0.5cm}
+
+\titledquestion{Integración por Sustitución y Partes}[50]
+Calcule la siguiente integral indefinida:
+\[ \int x^3 e^{x^2} \, dx \]
+
+\begin{solution}
+Primero, reescribimos convenientemente el integrando para facilitar una sustitución algebraica inicial:
+\[ \int x^2 \cdot e^{x^2} \cdot (x \, dx) \]
+
+Hacemos el cambio de variable $w = x^2$. Al calcular su diferencial se obtiene:
+\[ dw = 2x \, dx \implies \frac{dw}{2} = x \, dx \]
+
+Sustituyendo estas expresiones en la integral original, transformamos el problema en términos de $w$:
+\[ \int w e^w \frac{dw}{2} = \frac{1}{2} \int w e^w \, dw \]
+
+Para resolver esta nueva integral, aplicamos el método de integración por partes estándar. Definimos:
+\begin{align*}
+u &= w \implies du = dw \\
+dv &= e^w \, dw \implies v = e^w
+\end{align*}
+
+Aplicando la fórmula de integración por partes $\int u \, dv = u v - \int v \, du$:
+\[ \frac{1}{2} \int w e^w \, dw = \frac{1}{2} \left( w e^w - \int e^w \, dw \right) = \frac{1}{2} (w e^w - e^w) + C \]
+
+Factorizando el término común $e^w$:
+\[ \frac{1}{2} e^w (w - 1) + C \]
+
+Finalmente, devolvemos el cambio de variable a la variable original sustituyendo de nuevo $w = x^2$:
+\[ \int x^3 e^{x^2} \, dx = \frac{1}{2} e^{x^2} (x^2 - 1) + C \]
+\end{solution}
+
+\end{questions}
+
+\end{document}

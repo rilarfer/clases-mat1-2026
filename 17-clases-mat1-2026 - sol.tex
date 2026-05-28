@@ -1,0 +1,287 @@
+\documentclass[11pt,paper=a4,answers, addpoints]{exam}
+\usepackage{graphicx,lastpage}
+\usepackage{upgreek}
+\usepackage{censor}
+\censorruledepth=-.2ex
+\censorruleheight=.1ex
+\hyphenpenalty 10000
+
+\usepackage[paperheight=10.5in,paperwidth=8.27in,bindingoffset=0in,left=0.8in,right=1in, top=1in,bottom=1in,headsep=.5\baselineskip]{geometry}
+
+\flushbottom
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\renewcommand\ULthickness{2pt} 
+\setlength\ULdepth{1.5ex}
+\renewcommand{\baselinestretch}{1}
+\pagestyle{empty}
+
+\pagestyle{headandfoot}
+\headrule
+\newcommand{\continuedmessage}{%
+  \ifcontinuation{\footnotesize Pregunta \ContinuedQuestion\ continua\ldots}{}%
+}
+\runningheader{\footnotesize Departamento de Matemática}
+{\footnotesize Matemática I}
+{\footnotesize Página \thepage\ de \numpages}
+\footrule
+\footer{\footnotesize }
+{}
+{\ifincomplete{\footnotesize Pregunta \IncompleteQuestion\ continúa en la siguiente página \ldots}
+  {\iflastpage{\footnotesize Final del sistemático}{\footnotesize Por favor vea la siguiente página\ldots}}}
+
+\usepackage{amsfonts,amsmath}
+\usepackage{cleveref}
+\crefname{figure}{figure}{figures}
+\crefname{question}{question}{questions}
+\renewcommand\thequestion{\arabic{question}}
+\renewcommand{\questionlabel}{\thequestion)}
+\renewcommand{\questionshook}{%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\labelwidth}{-\labelsep}%
+}
+\usepackage{amsmath,multicol}
+\decimalpoint
+\nopointsinmargin
+\pointpoints{Punto}{Punto}
+
+\marginpointname{\points}
+\pointformat{\boldmath\themarginpoints}
+\bracketedpoints
+\usepackage{xparse}
+\usepackage{comment}
+
+\pointpoints{punto}{puntos}
+\bonuspointpoints{punto extra}{puntos extra}
+ 
+\totalformat{Pregunta \thequestion: \totalpoints puntos}
+ 
+\hqword{Pregunta}
+\hpgword{Página}
+\hpword{Puntos}
+\hsword{Puntos obtenidos}
+\htword{Total}
+\usepackage{color}
+
+\usepackage{mathrsfs}
+\newcommand{\Laplace}[1]{\ensuremath{\mathscr{L}{\left\lbrace #1\right\rbrace}}}
+\newcommand{\InvLap}[1]{\ensuremath{\mathscr{L}^{-1}{\left\lbrace #1\right\rbrace}}}
+\usepackage{physics}
+
+% --- CONFIGURACIÓN DEL FONDO (SOLO PRIMERA PÁGINA) ---
+\usepackage{eso-pic}
+\newcommand\FondoPortada{%
+  \AddToShipoutPictureBG*{ % El asterisco hace que solo sea en la página donde se invoca
+    \AtPageLowerLeft{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{fondo.pdf}%
+    }%
+  }%
+}
+% --------------------------------------------------
+
+\begin{document}
+\FondoPortada % Esto activa el fondo solo para esta página
+\printanswers
+\shadedsolutions
+\thispagestyle{empty}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución:} }
+\renewcommand{\thepartno}{\arabic{partno}}
+
+\begin{center}
+{\textbf{Segundo Sistemático}}
+\end{center}
+\begin{minipage}[t]{.6\textwidth}%
+  {\bfseries Nombres}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+  {\bfseries Apellidos}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+    {\bfseries Docente}: Ricardo Largaespada \par
+  \vspace{1ex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{.4\textwidth}%
+  {\bfseries Curso}: Matemática I\par
+  \vspace{1ex}
+  {\bfseries Fecha}: 24 de abril 2026 \par
+  \vspace{1ex}
+  {\bfseries Grupo}: 1M6-SIS\par
+  \vspace{1ex}
+\end{minipage}%
+\begin{center}
+  \rule{\textwidth}{1pt}
+\end{center}
+
+\noindent\underline{\sc Instrucciones a estudiantes}
+\begin{enumerate}
+\item Este sistemático contiene {\bf OCHO (8)} preguntas, las cuales debes resolver en grupos de 5 personas.
+\item Puedes utilizar calculadora. Sin embargo, debes escribir los pasos del trabajo.
+\item Entrega todo el trabajo adicional en páginas rotuladas.
+\end{enumerate}
+
+\rule[1ex]{\textwidth}{1pt}
+
+\vspace{0.5cm}
+\begin{center}
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{Pasos Generales para Resolver Problemas de Razones de Cambio Relacionadas}
+    \begin{enumerate}
+        \item Dibuja dos imágenes: una ``instantánea'' de la situación en un momento específico y un diagrama genérico que se aplique en cualquier momento.
+        \item Identifica el objetivo (es decir, la tasa que deseas encontrar).
+        \item Escribe la información que conoces.
+        \item Modela el escenario; es decir, determina ecuaciones que relacionen las variables relevantes. Asegúrate de indicar cualquier suposición que estés haciendo.
+        \item Deriva implícitamente tu modelo para obtener una ecuación que involucre las tasas.
+        \item Sustituye la información de la instantánea y resuelve para la tasa deseada.
+        \item Reflexiona para comprobar que tu respuesta sea razonable.
+    \end{enumerate}
+    \end{minipage}}
+\end{center}
+%\vspace{0.5cm}
+
+\qformat{Pregunta \thequestion: \thequestiontitle\dotfill\thepoints}
+\pointname{\%}
+
+\begin{questions}
+
+\titledquestion{Tanque de Aceite}[12\half]
+Un tanque de aceite en forma de cono invertido tiene una altura de 10 m y un radio de 6 m. Cuando el nivel del aceite tiene 5 m de profundidad, el tanque está goteando aceite por la punta a una tasa de $2\text{ m}^3$ por día. ¿Qué tan rápido está disminuyendo la altura del aceite en el tanque en este momento? \\
+\textit{Nota: El volumen de un cono de radio $r$ y altura $h$ es $V = \frac{1}{3}\pi r^2 h$.}
+%\vspace{6cm}
+\begin{solution}
+Sea $r$ el radio, $h$ la altura del nivel del aceite y $V$ el volumen en el tiempo $t$.
+Por semejanza de triángulos, sabemos que $\frac{r}{h} = \frac{6}{10}$, lo que implica que $r = \frac{3}{5}h$.
+Sustituimos $r$ en la fórmula del volumen para dejarlo en términos de $h$:
+\[ V = \frac{1}{3}\pi \left(\frac{3}{5}h\right)^2 h = \frac{3}{25}\pi h^3 \]
+Derivamos implícitamente con respecto a $t$:
+\[ \frac{dV}{dt} = \frac{9}{25}\pi h^2 \frac{dh}{dt} \]
+Sabemos que $\frac{dV}{dt} = -2$ (es negativo porque gotea) y en el momento dado $h = 5$. Sustituyendo:
+\[ -2 = \frac{9}{25}\pi (5)^2 \frac{dh}{dt} \implies -2 = 9\pi \frac{dh}{dt} \implies \frac{dh}{dt} = -\frac{2}{9\pi} \]
+La altura del aceite está disminuyendo a una tasa de $\frac{2}{9\pi} \text{ m/día}$.
+\end{solution}
+
+\titledquestion{Autos en Movimiento}[12\half]
+\begin{parts}
+    \part Dos autos se acercan a una intersección. Un auto rojo, que se acerca desde el norte, viaja a 20 pies por segundo y actualmente se encuentra a 60 pies de la intersección. Un auto azul, que se acerca desde el oeste, viaja a 30 pies por segundo y actualmente se encuentra a 80 pies de la intersección. En este momento, ¿la distancia entre los dos autos está aumentando o disminuyendo? ¿Con qué rapidez?
+%    \vspace{5cm}
+\begin{solution}
+    Sea $y$ la distancia del auto rojo a la intersección y $x$ la distancia del auto azul. Sea $D$ la distancia entre ellos.
+    Sabemos que $x = 80$, $y = 60$, $\frac{dy}{dt} = -20$, y $\frac{dx}{dt} = -30$.
+    La relación geométrica es $D^2 = x^2 + y^2$. En este momento, $D = \sqrt{80^2 + 60^2} = 100$.
+    Derivando respecto al tiempo:
+    \[ 2D \frac{dD}{dt} = 2x \frac{dx}{dt} + 2y \frac{dy}{dt} \implies 100 \frac{dD}{dt} = 80(-30) + 60(-20) \]
+    \[ 100 \frac{dD}{dt} = -2400 - 1200 = -3600 \implies \frac{dD}{dt} = -36 \]
+    La distancia entre los autos está \textbf{disminuyendo} a una rapidez de $36 \text{ pies/s}$.
+    \end{solution}
+    
+    \part En el mismo momento descrito en (a), un auto verde pasa junto al auto rojo, en dirección opuesta a 20 pies por segundo. En este momento, ¿la distancia entre el auto azul y el auto verde está aumentando o disminuyendo? ¿A qué tasa?
+%    \vspace{5cm}
+\begin{solution}
+    Sea $g$ la distancia del auto verde a la intersección. Como pasa justo al lado del auto rojo pero alejándose, $g = 60$ y $\frac{dg}{dt} = 20$ (positivo porque se aleja).
+    Sea $S$ la distancia entre el auto azul y el verde: $S^2 = x^2 + g^2$. En este instante, $S = \sqrt{80^2 + 60^2} = 100$.
+    \[ 2S \frac{dS}{dt} = 2x \frac{dx}{dt} + 2g \frac{dg}{dt} \implies 100 \frac{dS}{dt} = 80(-30) + 60(20) \]
+    \[ 100 \frac{dS}{dt} = -2400 + 1200 = -1200 \implies \frac{dS}{dt} = -12 \]
+    La distancia entre el auto azul y el verde está \textbf{disminuyendo} a una tasa de $12 \text{ pies/s}$.
+    \end{solution}
+\end{parts}
+
+\titledquestion{Cámara de Velocidad Policial}[12\half]
+Una patrulla de policía equipada con una cámara de velocidad en el vehículo conduce por una carretera hacia una intersección a 60 mph y actualmente se encuentra a media milla de la intersección. Un auto verde conduce por una carretera perpendicular hacia la intersección y actualmente se encuentra a dos millas de la intersección. La cámara de velocidad, que mide la tasa a la que cambia la distancia entre el auto verde y la patrulla, marca 70 mph. Si esta es una zona de 60 mph, ¿el conductor del auto verde está excediendo el límite de velocidad?
+%\vspace{6cm}
+\begin{solution}
+Sean $x$ la distancia de la patrulla a la intersección, $y$ la distancia del auto verde, y $D$ la distancia directa entre ellos.
+Sabemos que $x = 0.5$, $\frac{dx}{dt} = -60$, $y = 2$, y $\frac{dD}{dt} = -70$ (negativa porque la distancia se recorta).
+En este instante, $D = \sqrt{0.5^2 + 2^2} = \sqrt{4.25}$.
+Por Pitágoras, $D^2 = x^2 + y^2$. Derivando:
+\[ 2D \frac{dD}{dt} = 2x \frac{dx}{dt} + 2y \frac{dy}{dt} \implies D \frac{dD}{dt} = x \frac{dx}{dt} + y \frac{dy}{dt} \]
+Sustituimos los valores conocidos:
+\[ \sqrt{4.25}(-70) = (0.5)(-60) + 2\frac{dy}{dt} \]
+\[ -70\sqrt{4.25} = -30 + 2\frac{dy}{dt} \implies 2\frac{dy}{dt} = 30 - 70\sqrt{4.25} \]
+Sabiendo que $\sqrt{4.25} \approx 2.0615$, resolvemos:
+\[ 2\frac{dy}{dt} \approx 30 - 144.31 = -114.31 \implies \frac{dy}{dt} \approx -57.15 \text{ mph} \]
+El auto verde viaja a $57.15 \text{ mph}$. \textbf{No está excediendo} el límite de 60 mph.
+\end{solution}
+
+\titledquestion{Reflector}[12\half]
+Un reflector, que está en el suelo, se encuentra a 100 metros del punto más cercano de una carretera recta. Girando a una tasa constante de $\frac{\pi}{6}$ radianes por segundo, el reflector proyecta un haz de luz que interseca la carretera en un punto. Cuando la luz ilumina un punto en la carretera que está a 200 metros de distancia del reflector, ¿qué tan rápido se desplaza el haz de luz a lo largo de la carretera?
+%\vspace{6cm}
+\begin{solution}
+Sea $\theta$ el ángulo que forma el haz de luz con la perpendicular a la carretera, y $x$ la distancia desde el punto más cercano en la carretera hasta el haz de luz.
+La relación trigonométrica es $\tan\theta = \frac{x}{100}$, es decir, $x = 100 \tan\theta$.
+Derivando respecto al tiempo:
+\[ \frac{dx}{dt} = 100 \sec^2\theta \frac{d\theta}{dt} \]
+Se nos da que $\frac{d\theta}{dt} = \frac{\pi}{6}$.
+Cuando la hipotenusa (distancia del reflector al punto) es 200, podemos encontrar $\theta$ sabiendo que el cateto adyacente es 100:
+\[ \cos\theta = \frac{100}{200} = \frac{1}{2} \implies \theta = \frac{\pi}{3} \]
+Por tanto, $\sec\theta = 2 \implies \sec^2\theta = 4$. Sustituyendo en la derivada:
+\[ \frac{dx}{dt} = 100(4)\left(\frac{\pi}{6}\right) = \frac{400\pi}{6} = \frac{200\pi}{3} \]
+El haz de luz se desplaza a $\frac{200\pi}{3} \text{ m/s}$.
+\end{solution}
+
+\titledquestion{Corriendo a Clase}[12\half]
+Al mediodía, estás corriendo por el campus y notas que un amigo está a 100 pies al oeste de ti, también corriendo a clase. Si corres hacia el sur a una tasa constante de 450 pies/min y tu amigo corre hacia el norte a una tasa constante de 350 pies/min, ¿qué tan rápido cambia la distancia entre tú y tu amigo a las 12:02 pm?
+%\vspace{6cm}
+\begin{solution}
+Sea $t$ el tiempo en minutos transcurrido desde el mediodía. 
+Tú corres hacia el sur, así que tu posición $Y$ es $-450t$. Tu amigo corre al norte, su posición $Y$ es $350t$.
+La diferencia vertical entre ambos es $y = 350t - (-450t) = 800t$. La separación horizontal constante es $x = 100$.
+La distancia $D$ en el instante $t$ está dada por:
+\[ D^2 = x^2 + y^2 = 100^2 + (800t)^2 \]
+Derivando respecto al tiempo $t$:
+\[ 2D \frac{dD}{dt} = 2(800t) \cdot 800 \implies D \frac{dD}{dt} = 640000t \]
+A las 12:02 pm ($t = 2$), la distancia vertical es $800(2) = 1600$. La distancia $D$ es:
+\[ D = \sqrt{100^2 + 1600^2} = \sqrt{10000 + 2560000} = \sqrt{2570000} = 100\sqrt{257} \]
+Sustituyendo para hallar $\frac{dD}{dt}$:
+\[ 100\sqrt{257} \frac{dD}{dt} = 640000(2) \implies 100\sqrt{257} \frac{dD}{dt} = 1280000 \]
+\[ \frac{dD}{dt} = \frac{12800}{\sqrt{257}} \approx 798.44 \]
+La distancia cambia a una tasa de $\frac{12800}{\sqrt{257}} \text{ pies/min}$.
+\end{solution}
+
+\titledquestion{Cubo en Crecimiento}[12\half]
+El área superficial de un cubo está aumentando a una tasa de 72 pulgadas cuadradas por segundo. ¿A qué tasa está cambiando el volumen del cubo cuando la longitud de cada arista es de 3 pulgadas?
+%\vspace{7cm}
+El área superficial de un cubo está aumentando a una tasa de 72 pulgadas cuadradas por segundo. ¿A qué tasa está cambiando el volumen del cubo cuando la longitud de cada arista es de 3 pulgadas?
+%\vspace{7cm}
+\begin{solution}
+Sea $x$ la longitud de la arista del cubo. El área superficial es $S = 6x^2$ y el volumen es $V = x^3$.
+Nos dan que $\frac{dS}{dt} = 72$. Derivamos la ecuación del área superficial:
+\[ \frac{dS}{dt} = 12x \frac{dx}{dt} \]
+Evaluando cuando $x = 3$:
+\[ 72 = 12(3) \frac{dx}{dt} \implies 72 = 36 \frac{dx}{dt} \implies \frac{dx}{dt} = 2 \text{ pulgadas/s} \]
+Ahora, derivamos la ecuación del volumen:
+\[ \frac{dV}{dt} = 3x^2 \frac{dx}{dt} \]
+Sustituyendo los valores para $x = 3$ y $\frac{dx}{dt} = 2$:
+\[ \frac{dV}{dt} = 3(3^2)(2) = 3(9)(2) = 54 \]
+El volumen está aumentando a $54 \text{ pulgadas}^3\text{/s}$.
+\end{solution}
+
+\titledquestion{Inflando Globos}[12\half]
+Supón que estás usando una bomba para inflar globos. Asume que la bomba tiene un flujo de salida de 50 centímetros cúbicos por segundo y que los globos son esferas con volumen $V=\frac{4}{3}\pi r^3$. ¿Qué tan rápido aumenta el radio cuando el radio del globo es de 5 centímetros?
+%\vspace{7cm}
+\begin{solution}
+Sabemos que la tasa de cambio del volumen es $\frac{dV}{dt} = 50$.
+Derivamos el volumen $V=\frac{4}{3}\pi r^3$ respecto al tiempo:
+\[ \frac{dV}{dt} = 4\pi r^2 \frac{dr}{dt} \]
+Sustituimos el valor del radio $r = 5$ y la tasa del volumen $\frac{dV}{dt} = 50$:
+\[ 50 = 4\pi (5)^2 \frac{dr}{dt} \implies 50 = 100\pi \frac{dr}{dt} \]
+Despejamos $\frac{dr}{dt}$:
+\[ \frac{dr}{dt} = \frac{50}{100\pi} = \frac{1}{2\pi} \]
+El radio aumenta a una tasa de $\frac{1}{2\pi} \text{ cm/s}$.
+\end{solution}
+
+\titledquestion{Escalera Deslizante}[12\half]
+La parte superior de una escalera se desliza hacia abajo por una pared vertical a una tasa de 0.15 metros por segundo. En el momento en que la parte inferior de la escalera está a 3 metros de la pared, la parte inferior de la escalera se desliza alejándose de la pared a una tasa de 0.2 metros por segundo. ¿Cuánto mide la escalera?
+%\vspace{7cm}
+\begin{solution}
+Sea $y$ la altura de la parte superior de la escalera en la pared, $x$ la distancia de la base a la pared, y $L$ la longitud constante de la escalera.
+Por el Teorema de Pitágoras, $x^2 + y^2 = L^2$.
+Derivando implícitamente respecto al tiempo (sabiendo que $\frac{dL}{dt} = 0$):
+\[ 2x \frac{dx}{dt} + 2y \frac{dy}{dt} = 0 \implies x \frac{dx}{dt} + y \frac{dy}{dt} = 0 \]
+Nos dan que $\frac{dy}{dt} = -0.15$ (desciende), $\frac{dx}{dt} = 0.2$ (se aleja), y $x = 3$. Sustituyendo:
+\[ 3(0.2) + y(-0.15) = 0 \implies 0.6 - 0.15y = 0 \implies 0.15y = 0.6 \implies y = 4 \]
+Ahora que conocemos $x = 3$ y $y = 4$, podemos encontrar $L$:
+\[ L^2 = 3^2 + 4^2 = 9 + 16 = 25 \implies L = 5 \]
+La escalera mide $5 \text{ metros}$.
+\end{solution}
+\end{questions}
+
+\end{document}
