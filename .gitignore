@@ -1,0 +1,26 @@
+# Archivos temporales y auxiliares de LaTeX
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.toc
+*.xdv
+*.nav
+*.out
+*.snm
+*.pre
+*.synctex.gz
+*.synctex(busy)
+*.synctex
+*.bbl
+*.blg
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.run.xml
+*.bcf
+
+# Script de compilacion local
+compilar.bat
