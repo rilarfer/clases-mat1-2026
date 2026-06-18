@@ -1,0 +1,213 @@
+\documentclass[11pt,paper=a4,answers, addpoints]{exam}
+\usepackage{graphicx,lastpage}
+\usepackage{upgreek}
+\usepackage{censor}
+\censorruledepth=-.2ex
+\censorruleheight=.1ex
+\hyphenpenalty 10000
+
+\usepackage[paperheight=10.5in,paperwidth=8.27in,bindingoffset=0in,left=0.8in,right=0.8in, top=0.9in,bottom=0.7in,headsep=.5\baselineskip]{geometry}
+
+\flushbottom
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\renewcommand\ULthickness{2pt} 
+\setlength\ULdepth{1.5ex}
+\renewcommand{\baselinestretch}{1}
+\pagestyle{empty}
+
+\pagestyle{headandfoot}
+\headrule
+\newcommand{\continuedmessage}{%
+  \ifcontinuation{\footnotesize Pregunta \ContinuedQuestion\ continua\ldots}{}%
+}
+\runningheader{\footnotesize Universidad Nacional de Ingeniería}
+{\footnotesize Ingeniería de Sistemas}
+{\footnotesize Página \thepage\ de \numpages}
+\footrule
+\footer{\footnotesize }
+{}
+{\ifincomplete{\footnotesize Pregunta \IncompleteQuestion\ continúa en la siguiente página \ldots}
+  {\iflastpage{\footnotesize Final del sistemático}{\footnotesize Por favor vea la siguiente página\ldots}}}
+
+\usepackage{amsfonts,amsmath}
+\usepackage{cleveref}
+\crefname{figure}{figure}{figures}
+\crefname{question}{question}{questions}
+\renewcommand\thequestion{\arabic{question}}
+\renewcommand{\questionlabel}{\thequestion)}
+\renewcommand{\questionshook}{%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\labelwidth}{-\labelsep}%
+}
+\usepackage{amsmath,multicol}
+\decimalpoint
+\nopointsinmargin
+\pointpoints{Punto}{Punto}
+
+\marginpointname{\points}
+\pointformat{\boldmath\themarginpoints}
+\bracketedpoints
+\usepackage{xparse}
+\usepackage{comment}
+
+\pointpoints{punto}{puntos}
+\bonuspointpoints{punto extra}{puntos extra}
+ 
+\totalformat{Pregunta \thequestion: \totalpoints puntos}
+ 
+\hqword{Pregunta}
+\hpgword{Página}
+\hpword{Puntos}
+\hsword{Puntos obtenidos}
+\htword{Total}
+\usepackage{color}
+
+\usepackage{ mathrsfs}
+\newcommand{\Laplace}[1]{\ensuremath{\mathscr{L}{\left\lbrace #1\right\rbrace}}}
+\newcommand{\InvLap}[1]{\ensuremath{\mathscr{L}^{-1}{\left\lbrace #1\right\rbrace}}}
+\usepackage{physics}
+
+% --- CONFIGURACIÓN DEL FONDO (SOLO PRIMERA PÁGINA) ---
+\usepackage{eso-pic}
+\newcommand\FondoPortada{%
+  \AddToShipoutPictureBG*{ % El asterisco hace que solo sea en la página donde se invoca
+    \AtPageLowerLeft{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{fondo.pdf}%
+    }%
+  }%
+}
+% --------------------------------------------------
+
+\begin{document}
+\FondoPortada
+\printanswers
+\shadedsolutions
+\thispagestyle{empty}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución:} }
+\renewcommand{\thepartno}{\arabic{partno}}
+
+\begin{minipage}[t]{.6\textwidth}%
+  {\bfseries Nombres}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+  {\bfseries Apellidos}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+    {\bfseries Docente}: Ricardo Largaespada \par
+  \vspace{1ex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{.4\textwidth}%
+  {\bfseries Curso}: Matemática I\par
+  \vspace{1ex}
+  {\bfseries Fecha}: 11 de junio 2026 \par
+  \vspace{1ex}
+  {\bfseries Grupo}: 1M6-SIS\par
+  \vspace{1ex}
+\end{minipage}%
+\begin{center}
+  \rule{\textwidth}{1pt}
+\end{center}
+
+\noindent\underline{\sc Instrucciones a estudiantes}
+\begin{enumerate}
+\item Este sistemático contiene {\bf CINCUENTA (50)} problemas de integración, los cuales debes resolver en grupos de 5 personas.
+\item Puedes utilizar calculadora. Sin embargo, debes escribir los pasos del trabajo fundamentando un buen balance entre la teoría y la práctica.
+\item Entrega todo el trabajo adicional en páginas rotuladas.
+\end{enumerate}
+
+\rule[1ex]{\textwidth}{1pt}
+
+\qformat{Pregunta \thequestion: \thequestiontitle\dotfill\thepoints}
+\pointname{\%}
+
+\begin{questions}
+
+\titledquestion{Sumas, Riemann y Propiedades}[20]
+Evalúe las sumas y aplique propiedades (asuma $\int_0^5 f(x)dx=10, \int_5^7 f(x)dx=3, \int_0^5 g(x)dx=-2$).
+\begin{multicols}{2}
+\begin{parts}
+\part $\displaystyle \sum_{k=1}^{20} (3k - 2)$ \begin{solution} $590$ \end{solution}
+\part $\displaystyle \sum_{i=1}^{15} (i^2 - 4i + 1)$ \begin{solution} $775$ \end{solution}
+\part Límite Riemann: $\lim_{n \to \infty} \sum_{i=1}^{n} (x_i^*)^3 \Delta x$, en $[1, 4]$ \begin{solution} $\int_1^4 x^3 \, dx$ \end{solution}
+\part Límite Riemann: $\lim_{n \to \infty} \sum_{i=1}^{n} \frac{2}{1+(x_i^*)^2} \Delta x$, en $[0, 2]$ \begin{solution} $\int_0^2 \frac{2}{1+x^2} \, dx$ \end{solution}
+\part $\displaystyle \int_{0}^{3} (2x + 1) \, dx$ \begin{solution} $12$ \end{solution}
+\part $\displaystyle \int_{1}^{4} (x^2 - x) \, dx$ \begin{solution} $\frac{27}{2}$ o $13.5$ \end{solution}
+\part $\displaystyle \int_0^7 f(x) \, dx$ \begin{solution} $13$ \end{solution}
+\part $\displaystyle \int_5^0 f(x) \, dx$ \begin{solution} $-10$ \end{solution}
+\part $\displaystyle \int_0^5 [3f(x) - 4g(x)] \, dx$ \begin{solution} $38$ \end{solution}
+\part $\displaystyle \int_5^5 [f(x) \cdot g(x)] \, dx$ \begin{solution} $0$ \end{solution}
+\end{parts}
+\end{multicols}
+
+\titledquestion{Cambio de Variable Básico y Definidas}[20]
+Evalúe las siguientes integrales definidas utilizando técnicas clásicas.
+\begin{multicols}{2}
+\begin{parts}
+\part $\displaystyle \int_{-3}^{3} \frac{x^3}{x^2 + 1} \, dx$ \begin{solution} $0$ (Función impar) \end{solution}
+\part $\displaystyle \int_{-\pi}^{\pi} (x^4 \sin x + x^2) \, dx$ \begin{solution} $\frac{2\pi^3}{3}$ \end{solution}
+\part $\displaystyle \int_{0}^{2} 2x(x^2 + 1)^3 \, dx$ \begin{solution} $156$ \end{solution}
+\part $\displaystyle \int_{0}^{1} \frac{x}{(x^2 - 4)^2} \, dx$ \begin{solution} $\frac{1}{24}$ \end{solution}
+\part $\displaystyle \int_{0}^{\pi/2} \sin^3 x \cos x \, dx$ \begin{solution} $\frac{1}{4}$ \end{solution}
+\part $\displaystyle \int_{0}^{1} x^2 \sqrt{1 - x^3} \, dx$ \begin{solution} $\frac{2}{9}$ \end{solution}
+\part $\displaystyle \int_{1}^{e} \frac{\ln x}{x} \, dx$ \begin{solution} $\frac{1}{2}$ \end{solution}
+\part $\displaystyle \int_{0}^{\sqrt{\pi}} x \cos(x^2) \, dx$ \begin{solution} $0$ \end{solution}
+\part $\displaystyle \int_{1}^{4} \frac{e^{\sqrt{x}}}{\sqrt{x}} \, dx$ \begin{solution} $2e(e - 1)$ \end{solution}
+\part $\displaystyle \int_{0}^{1} \frac{e^x}{1 + e^{2x}} \, dx$ \begin{solution} $\arctan(e) - \frac{\pi}{4}$ \end{solution}
+\end{parts}
+\end{multicols}
+
+\titledquestion{Cambio de Variable Especial ($u=a+b-x$)}[20]
+Resuelva empleando el cambio de variable clásico o transformaciones de límites.
+\begin{multicols}{2}
+\begin{parts}
+\part $\displaystyle \int_{\pi/6}^{\pi/3} \tan x \sec^2 x \, dx$ \begin{solution} $\frac{4}{3}$ \end{solution}
+\part $\displaystyle \int_{0}^{3} \frac{x}{\sqrt{x+1}} \, dx$ \begin{solution} $\frac{8}{3}$ \end{solution}
+\part $\displaystyle \int_{0}^{\pi/2} \frac{\sin x}{\sin x + \cos x} \, dx$ \begin{solution} $\frac{\pi}{4}$ \end{solution}
+\part $\displaystyle \int_{0}^{\pi/2} \frac{\sqrt{\cos x}}{\sqrt{\sin x} + \sqrt{\cos x}} \, dx$ \begin{solution} $\frac{\pi}{4}$ \end{solution}
+\part $\displaystyle \int_{1}^{3} \frac{\sqrt{x}}{\sqrt{x} + \sqrt{4-x}} \, dx$ \begin{solution} $1$ \end{solution}
+\part $\displaystyle \int_{0}^{\pi} \frac{x \sin x}{1 + \cos^2 x} \, dx$ \begin{solution} $\frac{\pi^2}{4}$ \end{solution}
+\part $\displaystyle \int_{2}^{4} \frac{\ln(9-x)}{\ln(9-x) + \ln(x+3)} \, dx$ \begin{solution} $1$ \end{solution}
+\part $\displaystyle \int_{0}^{\pi/2} \frac{\cos x}{\sin x + \cos x} \, dx$ \begin{solution} $\frac{\pi}{4}$ \end{solution}
+\part $\displaystyle \int_{0}^{2} x \sqrt{2 - x} \, dx$ \begin{solution} $\frac{16\sqrt{2}}{15}$ \end{solution}
+\part $\displaystyle \int_{0}^{\pi} x \sin x \, dx$ \begin{solution} $\pi$ \end{solution}
+\end{parts}
+\end{multicols}
+
+\titledquestion{Cálculo de Áreas Simples y Geométricas}[20]
+Para a-e, evalúe usando geometría. Para f-j, halle el área de la región descrita.
+\begin{multicols}{2}
+\begin{parts}
+\part Ár. geom.: $\displaystyle \int_{-2}^{2} \sqrt{4 - x^2} \, dx$ \begin{solution} $2\pi$ \end{solution}
+\part Ár. geom.: $\displaystyle \int_{0}^{3} (4 - x) \, dx$ \begin{solution} $\frac{15}{2}$ \end{solution}
+\part Ár. geom.: $\displaystyle \int_{-1}^{2} |x| \, dx$ \begin{solution} $\frac{5}{2}$ \end{solution}
+\part Ár. geom.: $\displaystyle \int_{0}^{4} \sqrt{16 - x^2} \, dx$ \begin{solution} $4\pi$ \end{solution}
+\part Ár. geom.: $\displaystyle \int_{-3}^{0} (x + 3) \, dx$ \begin{solution} $\frac{9}{2}$ \end{solution}
+\part Región bajo $y = x^2$, $x \in [1, 3]$ \begin{solution} $\frac{26}{3}$ \end{solution}
+\part Región bajo $y = \sqrt{x}$, $x \in [0, 4]$ \begin{solution} $\frac{16}{3}$ \end{solution}
+\part Entre $y = x^2$ y $y = 2x$ \begin{solution} $\frac{4}{3}$ \end{solution}
+\part Entre $y = x^3$, $y = x$, I cuadrante \begin{solution} $\frac{1}{4}$ \end{solution}
+\part Entre $x = y^2$ y $x = 4$ \begin{solution} $\frac{32}{3}$ \end{solution}
+\end{parts}
+\end{multicols}
+
+\titledquestion{Áreas Compuestas}[20]
+Plantee y calcule el área total de la región limitada por las siguientes curvas.
+\begin{multicols}{2}
+\begin{parts}
+\part Entre $x = 2y - y^2$, eje $y$ \begin{solution} $\frac{4}{3}$ \end{solution}
+\part Entre $y = e^x$, $y = e^{-x}$, $x = 1$ \begin{solution} $e + \frac{1}{e} - 2$ \end{solution}
+\part Entre $y = 1/x$, $y = 0$, $x \in [1, e]$ \begin{solution} $1$ \end{solution}
+\part Entre $y = x^3 - x$, eje $x$, $x \in [-1, 2]$ \begin{solution} $\frac{11}{4}$ \end{solution}
+\part Entre $y = \sin x$, $y = \cos x$, $x \in [0, \pi]$ \begin{solution} $2\sqrt{2}$ \end{solution}
+\part Entre $y = \sqrt{x}$, $y = x - 2$, eje $x$ \begin{solution} $\frac{10}{3}$ \end{solution}
+\part Entre $y = |x|$, $y = 2 - x^2$ \begin{solution} $\frac{7}{3}$ \end{solution}
+\part Entre $y = 2x$, $y = 4 - 2x$, eje $x$ \begin{solution} $2$ \end{solution}
+\part Entre $x = y^3 - y$, $x = 3y$ \begin{solution} $8$ \end{solution}
+\part Entre $y = x^2 - 4$, $y = 0$ \begin{solution} $\frac{32}{3}$ \end{solution}
+\end{parts}
+\end{multicols}
+
+\end{questions}
+
+\end{document}

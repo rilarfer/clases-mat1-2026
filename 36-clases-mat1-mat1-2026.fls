@@ -1,7 +1,7 @@
 PWD c:\Users\rilar\OneDrive - UNI\4 UNI\Primer Semestre 2026\Matematica I\clases-mat1-2026
 INPUT C:\Users\rilar\AppData\Local\MiKTeX\miktex\data\le\xetex\xelatex.fmt
-INPUT c:\Users\rilar\OneDrive - UNI\4 UNI\Primer Semestre 2026\Matematica I\clases-mat1-2026\17-clases-mat1-2026 - sol.tex
-OUTPUT 17-clases-mat1-2026 - sol.log
+INPUT c:\Users\rilar\OneDrive - UNI\4 UNI\Primer Semestre 2026\Matematica I\clases-mat1-2026\36-clases-mat1-mat1-2026.tex
+OUTPUT 36-clases-mat1-mat1-2026.log
 INPUT C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex\latex\exam\exam.cls
 INPUT C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex\latex\exam\exam.cls
 INPUT C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
@@ -107,10 +107,10 @@ INPUT C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex\latex\physics\physics.sty
 INPUT C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex\latex\physics\physics.sty
 INPUT C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex\latex\eso-pic\eso-pic.sty
 INPUT C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex\latex\eso-pic\eso-pic.sty
-INPUT .\17-clases-mat1-2026 - sol.aux
-INPUT .\17-clases-mat1-2026 - sol.aux
-INPUT 17-clases-mat1-2026 - sol.aux
-OUTPUT 17-clases-mat1-2026 - sol.aux
+INPUT .\36-clases-mat1-mat1-2026.aux
+INPUT .\36-clases-mat1-mat1-2026.aux
+INPUT 36-clases-mat1-mat1-2026.aux
+OUTPUT 36-clases-mat1-mat1-2026.aux
 INPUT C:\Users\rilar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Users\rilar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\rilar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
@@ -147,5 +147,5 @@ INPUT C:\Users\rilar\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
 INPUT .\fondo.pdf
 INPUT .\fondo.pdf
 INPUT .\fondo.pdf
-OUTPUT 17-clases-mat1-2026 - sol.xdv
-INPUT 17-clases-mat1-2026 - sol.aux
+OUTPUT 36-clases-mat1-mat1-2026.xdv
+INPUT 36-clases-mat1-mat1-2026.aux

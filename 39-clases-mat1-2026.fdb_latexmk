@@ -1,12 +1,12 @@
 # Fdb version 4
-["xdvipdfmx"] 1779984496.58241 "31-clases-mat1-2026 - sol.xdv" "31-clases-mat1-2026 - sol.pdf" "31-clases-mat1-2026 - sol" 1779984496.97867 0
-  "31-clases-mat1-2026 - sol.xdv" 1779984496 25320 9b07cea6b5703a2a01fc6b3e86dba7de "xelatex"
+["xdvipdfmx"] 1781795902.73773 "39-clases-mat1-2026.xdv" "39-clases-mat1-2026.pdf" "39-clases-mat1-2026" 1781795903.41591 0
+  "39-clases-mat1-2026.xdv" 1781795902 47672 f7e82701b9bdd94bc6cb1e8735aff472 "xelatex"
   (generated)
-  "31-clases-mat1-2026 - sol.pdf"
+  "39-clases-mat1-2026.pdf"
   (rewritten before read)
-["xelatex"] 1779984495.78915 "c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/31-clases-mat1-2026 - sol.tex" "31-clases-mat1-2026 - sol.xdv" "31-clases-mat1-2026 - sol" 1779984496.97476 0
-  "31-clases-mat1-2026 - sol.aux" 1779984496 1423 ff79bb97a9a0f8bd30c8945abf511cc6 "xelatex"
-  "31-clases-mat1-2026 - sol.tex" 1779984492 6562 6889b0d42196ac54820113859e0fd99a ""
+["xelatex"] 1781795900.96636 "c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/39-clases-mat1-2026.tex" "39-clases-mat1-2026.xdv" "39-clases-mat1-2026" 1781795903.39408 0
+  "39-clases-mat1-2026.aux" 1781795902 10013 9799507ce8db499c2a00a92f1133a8b1 "xelatex"
+  "39-clases-mat1-2026.tex" 1781795895 10165 5c7473923963a19bd76ae3acfa96269e ""
   "C:/Users/rilar/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1763942517 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/rilar/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1763942518 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/rilar/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1763016043 27176698 df4d511297cdd85b5e70eb8f734b399c ""
@@ -81,10 +81,10 @@
   "C:/Users/rilar/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1761901070 33142 efe8f4750fc02524935e7423b4bdef69 ""
   "C:/Users/rilar/AppData/Local/Programs/MiKTeX/tex/latex/ulem/ulem.sty" 1578651445 15682 94f55b803e160cf7fb6e4d77d07cfe1d ""
   "C:/Users/rilar/AppData/Local/Programs/MiKTeX/tex/latex/was/upgreek.sty" 1665850770 5794 9054e31be15d93f1e6bd28cca2b6643f ""
-  "c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/31-clases-mat1-2026 - sol.tex" 1779984492 6562 6889b0d42196ac54820113859e0fd99a ""
-  "fondo.pdf" 1778722251 33064 6217a3f65f1d616aee9e720723e738f7 ""
+  "c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/39-clases-mat1-2026.tex" 1781795895 10165 5c7473923963a19bd76ae3acfa96269e ""
+  "fondo.pdf" 1780584295 41454 716cd70b81ff38595c6740938a434d11 ""
   (generated)
-  "31-clases-mat1-2026 - sol.aux"
-  "31-clases-mat1-2026 - sol.log"
-  "31-clases-mat1-2026 - sol.xdv"
+  "39-clases-mat1-2026.aux"
+  "39-clases-mat1-2026.log"
+  "39-clases-mat1-2026.xdv"
   (rewritten before read)

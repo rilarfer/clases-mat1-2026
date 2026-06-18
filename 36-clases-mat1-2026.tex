@@ -1,0 +1,214 @@
+\documentclass[11pt,paper=a4,answers, addpoints]{exam}
+\usepackage{graphicx,lastpage}
+\usepackage{upgreek}
+\usepackage{censor}
+\censorruledepth=-.2ex
+\censorruleheight=.1ex
+\hyphenpenalty 10000
+
+\usepackage[paperheight=10.5in,paperwidth=8.27in,bindingoffset=0in,left=0.8in,right=0.8in, top=0.9in,bottom=0.7in,headsep=.5\baselineskip]{geometry}
+
+\flushbottom
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\renewcommand\ULthickness{2pt} 
+\setlength\ULdepth{1.5ex}
+\renewcommand{\baselinestretch}{1}
+\pagestyle{empty}
+
+\pagestyle{headandfoot}
+\headrule
+\newcommand{\continuedmessage}{%
+  \ifcontinuation{\footnotesize Pregunta \ContinuedQuestion\ continua\ldots}{}%
+}
+\runningheader{\footnotesize Universidad Nacional de Ingeniería}
+{\footnotesize Ingeniería de Sistemas}
+{\footnotesize Página \thepage\ de \numpages}
+\footrule
+\footer{\footnotesize }
+{}
+{\ifincomplete{\footnotesize Pregunta \IncompleteQuestion\ continúa en la siguiente página \ldots}
+  {\iflastpage{\footnotesize Final del sistemático}{\footnotesize Por favor vea la siguiente página\ldots}}}
+
+\usepackage{amsfonts,amsmath}
+\usepackage{cleveref}
+\crefname{figure}{figure}{figures}
+\crefname{question}{question}{questions}
+\renewcommand\thequestion{\arabic{question}}
+\renewcommand{\questionlabel}{\thequestion)}
+\renewcommand{\questionshook}{%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\labelwidth}{-\labelsep}%
+}
+\usepackage{amsmath,multicol}
+\decimalpoint
+\nopointsinmargin
+\pointpoints{Punto}{Punto}
+
+\marginpointname{\points}
+\pointformat{\boldmath\themarginpoints}
+\bracketedpoints
+\usepackage{xparse}
+\usepackage{comment}
+
+\pointpoints{punto}{puntos}
+\bonuspointpoints{punto extra}{puntos extra}
+ 
+\totalformat{Pregunta \thequestion: \totalpoints puntos}
+ 
+\hqword{Pregunta}
+\hpgword{Página}
+\hpword{Puntos}
+\hsword{Puntos obtenidos}
+\htword{Total}
+\usepackage{color}
+
+\usepackage{ mathrsfs}
+\newcommand{\Laplace}[1]{\ensuremath{\mathscr{L}{\left\lbrace #1\right\rbrace}}}
+\newcommand{\InvLap}[1]{\ensuremath{\mathscr{L}^{-1}{\left\lbrace #1\right\rbrace}}}
+\usepackage{physics}
+
+% --- CONFIGURACIÓN DEL FONDO (SOLO PRIMERA PÁGINA) ---
+\usepackage{eso-pic}
+\newcommand\FondoPortada{%
+  \AddToShipoutPictureBG*{ % El asterisco hace que solo sea en la página donde se invoca
+    \AtPageLowerLeft{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{fondo.pdf}%
+    }%
+  }%
+}
+% --------------------------------------------------
+
+\begin{document}
+\FondoPortada
+\printanswers
+\shadedsolutions
+\thispagestyle{empty}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución:} }
+\renewcommand{\thepartno}{\arabic{partno}}
+
+%\begin{center}
+%{\textbf{Sistemático de Integración}}
+%\end{center}
+\begin{minipage}[t]{.6\textwidth}%
+  {\bfseries Nombres}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+  {\bfseries Apellidos}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+    {\bfseries Docente}: Ricardo Largaespada \par
+  \vspace{1ex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{.4\textwidth}%
+  {\bfseries Curso}: Matemática I\par
+  \vspace{1ex}
+  {\bfseries Fecha}: 11 de junio 2026 \par
+  \vspace{1ex}
+  {\bfseries Grupo}: 1M6-SIS\par
+  \vspace{1ex}
+\end{minipage}%
+\begin{center}
+  \rule{\textwidth}{1pt}
+\end{center}
+
+\noindent\underline{\sc Instrucciones a estudiantes}
+\begin{enumerate}
+\item Este sistemático contiene {\bf CINCUENTA (50)} problemas de integración, los cuales debes resolver en grupos de 5 personas.
+\item Puedes utilizar calculadora. Sin embargo, debes escribir los pasos del trabajo fundamentando un buen balance entre la teoría y la práctica.
+\item Entrega todo el trabajo adicional en páginas rotuladas.
+\end{enumerate}
+
+\rule[1ex]{\textwidth}{1pt}
+
+\qformat{Pregunta \thequestion: \thequestiontitle\dotfill\thepoints}
+\pointname{\%}
+
+\begin{questions}
+\titledquestion{Integrales Trigonométricas}[20]
+Resuelva las siguientes integrales.
+\begin{multicols}{2}
+\begin{parts}
+\part $\displaystyle \int \sin^3 x \, dx$ \begin{solution} $-\cos x + \frac{\cos^3 x}{3} + C$ \end{solution}
+\part $\displaystyle \int \cos^4 x \, dx$ \begin{solution} $\frac{3x}{8} + \frac{\sin 2x}{4} + \frac{\sin 4x}{32} + C$ \end{solution}
+\part $\displaystyle \int \sin^2 x \cos^3 x \, dx$ \begin{solution} $\frac{\sin^3 x}{3} - \frac{\sin^5 x}{5} + C$ \end{solution}
+\part $\displaystyle \int \tan^3 x \, dx$ \begin{solution} $\frac{\tan^2 x}{2} + \ln|\cos x| + C$ \end{solution}
+\part $\displaystyle \int \sec^4 x \, dx$ \begin{solution} $\tan x + \frac{\tan^3 x}{3} + C$ \end{solution}
+\part $\displaystyle \int \csc^3 x \cot^3 x \, dx$ \begin{solution} $-\frac{\csc^5 x}{5} + \frac{\csc^3 x}{3} + C$ \end{solution}
+\part $\displaystyle \int \sin 5x \cos 3x \, dx$ \begin{solution} $-\frac{\cos 8x}{16} - \frac{\cos 2x}{4} + C$ \end{solution}
+\part $\displaystyle \int \cos 4x \cos 2x \, dx$ \begin{solution} $\frac{\sin 6x}{12} + \frac{\sin 2x}{4} + C$ \end{solution}
+\part $\displaystyle \int \tan^4 x \, dx$ \begin{solution} $\frac{\tan^3 x}{3} - \tan x + x + C$ \end{solution}
+\part $\displaystyle \int \sec^3 x \tan x \, dx$ \begin{solution} $\frac{\sec^3 x}{3} + C$ \end{solution}
+\end{parts}
+\end{multicols}
+
+\titledquestion{Sustitución Trigonométrica}[20]
+Resuelva utilizando sustitución trigonométrica.
+\begin{multicols}{2}
+\begin{parts}
+\part $\displaystyle \int \frac{dx}{x^2 \sqrt{16-x^2}}$ \begin{solution} $-\frac{\sqrt{16-x^2}}{16x} + C$ \end{solution}
+\part $\displaystyle \int \frac{\sqrt{x^2-4}}{x} \, dx$ \begin{solution} $\sqrt{x^2-4} - 2\arccos\left(\frac{2}{x}\right) + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{(x^2+9)^{3/2}}$ \begin{solution} $\frac{x}{9\sqrt{x^2+9}} + C$ \end{solution}
+\part $\displaystyle \int x^3 \sqrt{1-x^2} \, dx$ \begin{solution} $-\frac{(1-x^2)^{5/2}}{5} + \frac{(1-x^2)^{3/2}}{3} + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{x\sqrt{x^2+25}}$ \begin{solution} $\frac{1}{5} \ln \left| \frac{\sqrt{x^2+25}-5}{x} \right| + C$ \end{solution}
+\part $\displaystyle \int \sqrt{9-x^2} \, dx$ \begin{solution} $\frac{9}{2}\arcsin\left(\frac{x}{3}\right) + \frac{x\sqrt{9-x^2}}{2} + C$ \end{solution}
+\part $\displaystyle \int \frac{x^2}{\sqrt{4-x^2}} \, dx$ \begin{solution} $2\arcsin\left(\frac{x}{2}\right) - \frac{x\sqrt{4-x^2}}{2} + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{\sqrt{x^2-1}}$ \begin{solution} $\ln|x+\sqrt{x^2-1}| + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{x^2\sqrt{x^2+4}}$ \begin{solution} $-\frac{\sqrt{x^2+4}}{4x} + C$ \end{solution}
+\part $\displaystyle \int \frac{x^3}{\sqrt{x^2+1}} \, dx$ \begin{solution} $\frac{(x^2+1)^{3/2}}{3} - \sqrt{x^2+1} + C$ \end{solution}
+\end{parts}
+\end{multicols}
+
+\titledquestion{Fracciones Parciales}[20]
+Resuelva integrando por fracciones parciales.
+\begin{multicols}{2}
+\begin{parts}
+\part $\displaystyle \int \frac{dx}{x^2-9}$ \begin{solution} $\frac{1}{6}\ln\left|\frac{x-3}{x+3}\right| + C$ \end{solution}
+\part $\displaystyle \int \frac{2x+3}{x^2-5x+6} \, dx$ \begin{solution} $9\ln|x-3| - 7\ln|x-2| + C$ \end{solution}
+\part $\displaystyle \int \frac{x}{(x-1)(x+2)} \, dx$ \begin{solution} $\frac{1}{3}\ln|x-1| + \frac{2}{3}\ln|x+2| + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{x^3+x}$ \begin{solution} $\ln|x| - \frac{1}{2}\ln(x^2+1) + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{x^2(x+1)}$ \begin{solution} $\ln|x+1| - \ln|x| - \frac{1}{x} + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{x^3-x^2}$ \begin{solution} $\ln\left|\frac{x-1}{x}\right| - \frac{1}{x} + C$ \end{solution}
+\part $\displaystyle \int \frac{x^2+1}{(x-1)^3} \, dx$ \begin{solution} $\ln|x-1| - \frac{2}{x-1} - \frac{1}{(x-1)^2} + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{x^4-1}$ \begin{solution} $\frac{1}{4}\ln\left|\frac{x-1}{x+1}\right| - \frac{1}{2}\arctan x + C$ \end{solution}
+\part $\displaystyle \int \frac{x-1}{x^2+3x+2} \, dx$ \begin{solution} $3\ln|x+2| - 2\ln|x+1| + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{x(x^2+1)^2}$ \begin{solution} $\ln|x| - \frac{1}{2}\ln(x^2+1) + \frac{1}{2(x^2+1)} + C$ \end{solution}
+\end{parts}
+\end{multicols}
+
+\titledquestion{Fracciones de Seno y Coseno}[20]
+Resuelva utilizando sustitución universal u otras identidades.
+\begin{multicols}{2}
+\begin{parts}
+\part $\displaystyle \int \frac{dx}{1+\sin x}$ \begin{solution} $\tan x - \sec x + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{1-\cos x}$ \begin{solution} $-\cot\left(\frac{x}{2}\right) + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{\sin x + \cos x}$ \begin{solution} $\frac{1}{\sqrt{2}}\ln\left|\tan\left(\frac{x}{2}+\frac{\pi}{8}\right)\right| + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{1+\cos x}$ \begin{solution} $\tan\left(\frac{x}{2}\right) + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{2+\cos x}$ \begin{solution} $\frac{2}{\sqrt{3}}\arctan\left(\frac{1}{\sqrt{3}}\tan\left(\frac{x}{2}\right)\right) + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{3-2\cos x}$ \begin{solution} $\frac{2}{\sqrt{5}}\arctan\left(\sqrt{5}\tan\left(\frac{x}{2}\right)\right) + C$ \end{solution}
+\part $\displaystyle \int \frac{\sin x}{1+\cos^2 x} \, dx$ \begin{solution} $-\arctan(\cos x) + C$ \end{solution}
+\part $\displaystyle \int \frac{\cos x}{2-\sin x} \, dx$ \begin{solution} $-\ln|2-\sin x| + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{5+4\sin x}$ \begin{solution} $\frac{2}{3}\arctan\left(\frac{5\tan(x/2)+4}{3}\right) + C$ \end{solution}
+\part $\displaystyle \int \frac{\sin x \cos x}{1+\sin^4 x} \, dx$ \begin{solution} $\frac{1}{2}\arctan(\sin^2 x) + C$ \end{solution}
+\end{parts}
+\end{multicols}
+
+\titledquestion{Integrales de Mayor Complejidad}[20]
+Resuelva las siguientes integrales de alto nivel, aplicando sustituciones ingeniosas, identidades avanzadas o desarrollo de fracciones parciales.
+\begin{multicols}{2}
+\begin{parts}
+\part $\displaystyle \int \sqrt{\tan x} \, dx$ \begin{solution} $\frac{\sqrt{2}}{4}\ln\left|\frac{\tan x-\sqrt{2\tan x}+1}{\tan x+\sqrt{2\tan x}+1}\right| + \frac{\sqrt{2}}{2}\arctan\left(\frac{\sqrt{2\tan x}}{1-\tan x}\right) + C$ \end{solution}
+\part $\displaystyle \int \frac{1}{(x^2-x-6)^2} \, dx$ \begin{solution} $\frac{2}{125}\ln\left|\frac{x+2}{x-3}\right| - \frac{2x-1}{25(x^2-x-6)} + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{x^4+1}$ \begin{solution} $\frac{\sqrt{2}}{4}\ln\left|\frac{x^2+\sqrt{2}x+1}{x^2-\sqrt{2}x+1}\right| + \frac{\sqrt{2}}{2}\arctan(\sqrt{2}x+1) + \frac{\sqrt{2}}{2}\arctan(\sqrt{2}x-1) + C$ \end{solution}
+\part $\displaystyle \int \frac{x^2-1}{x^4+1} \, dx$ \begin{solution} $\frac{1}{2\sqrt{2}}\ln\left|\frac{x^2-\sqrt{2}x+1}{x^2+\sqrt{2}x+1}\right| + C$ \end{solution}
+\part $\displaystyle \int \frac{\sqrt{x}}{1+\sqrt[3]{x}} \, dx$ \begin{solution} $\frac{6x^{7/6}}{7} - \frac{6x^{5/6}}{5} + 2x^{1/2} - 6x^{1/6} + 6\arctan(x^{1/6}) + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{(1+x^2)\sqrt{1-x^2}}$ \begin{solution} $\frac{\sqrt{2}}{2}\arctan\left(\frac{\sqrt{2}x}{\sqrt{1-x^2}}\right) + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{x\sqrt{x^4+1}}$ \begin{solution} $\frac{1}{4}\ln\left|\frac{\sqrt{x^4+1}-1}{\sqrt{x^4+1}+1}\right| + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{\sqrt{x}+\sqrt[3]{x}}$ \begin{solution} $2x^{1/2} - 3x^{1/3} + 6x^{1/6} - 6\ln|x^{1/6}+1| + C$ \end{solution}
+\part $\displaystyle \int \frac{dx}{\sin^3 x \cos^5 x}$ \begin{solution} $-\frac{1}{2\tan^2 x} + 3\ln|\tan x| + \frac{3\tan^2 x}{2} + \frac{\tan^4 x}{4} + C$ \end{solution}
+\part $\displaystyle \int \frac{e^{2x}}{\sqrt[4]{e^x+1}} \, dx$ \begin{solution} $\frac{4}{7}(e^x+1)^{7/4} - \frac{4}{3}(e^x+1)^{3/4} + C$ \end{solution}
+\end{parts}
+\end{multicols}
+\end{questions}
+
+\end{document}

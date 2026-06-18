@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.11.13)  21 MAY 2026 09:38
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.11.13)  11 JUN 2026 09:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/17-clases-mat1-2026 - sol.tex"
-(c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/17-clases-mat1-2026 - sol.tex
+**"c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/36-clases-mat1-mat1-2026.tex"
+(c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/36-clases-mat1-mat1-2026.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
 (C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex/latex/exam\exam.cls
@@ -418,13 +418,13 @@ Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 LaTeX Warning: Unused global option(s):
     [paper].
 
-(17-clases-mat1-2026 - sol.aux
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
+(36-clases-mat1-mat1-2026.aux
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported on input line 8.
+(babel)             Reported on input line 10.
 )
-\openout1 = `"17-clases-mat1-2026 - sol.aux"'.
+\openout1 = `36-clases-mat1-mat1-2026.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
 LaTeX Font Info:    ... okay on input line 83.
@@ -451,15 +451,15 @@ LaTeX Font Info:    ... okay on input line 83.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(57.81621pt, 467.587pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 614.29501pt, 72.26999pt)
+* h-part:(L,W,R)=(57.81621pt, 482.04079pt, 57.81621pt)
+* v-part:(T,H,B)=(65.04256pt, 643.20366pt, 50.58878pt)
 * \paperwidth=597.6732pt
 * \paperheight=758.83499pt
-* \textwidth=467.587pt
-* \textheight=614.29501pt
+* \textwidth=482.04079pt
+* \textheight=643.20366pt
 * \oddsidemargin=-14.45378pt
 * \evensidemargin=-14.45378pt
-* \topmargin=-21.8pt
+* \topmargin=-29.02744pt
 * \headheight=15.0pt
 * \headsep=6.8pt
 * \topskip=11.0pt
@@ -479,6 +479,11 @@ LaTeX Font Info:    ... okay on input line 83.
 
 LaTeX Info: Redefining \. on input line 83.
 LaTeX Info: Redefining \% on input line 83.
+
+Overfull \hbox (16.99998pt too wide) in paragraph at lines 94--111
+[][] [] 
+ []
+
 LaTeX Font Info:    Trying to load font information for U+msa on input line 115.
 (C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -499,20 +504,30 @@ File: fondo.pdf Graphic file (type pdf)
 <use fondo.pdf>
 [1
 
-]
-Overfull \hbox (5.71584pt too wide) in paragraph at lines 188--191
-\TU/lmr/m/n/10.95 carretera hacia una intersección a 60 mph y actualmente se encuentra a media milla de la intersección.
+] [2]
+Overfull \hbox (5.52135pt too wide) in paragraph at lines 197--199
+\TU/lmr/m/n/10.95 Resuelva las siguientes integrales de alto nivel, aplicando sustituciones ingeniosas, identidades avanzadas
  []
 
-[2] [3] [4] [5] [6]
-This exam contains 8 questions with 2 parts, 0 subparts, and 0 subsubparts.
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
+\TU/lmr/bx/n/10.95 Solución: $[] [] [] \OT1/cmr/m/n/10.95 +
+ []
+
+
+Overfull \hbox (36.73141pt too wide) in paragraph at lines 202--202
+\TU/lmr/bx/n/10.95 Solución: $[] [] [] \OT1/cmr/m/n/10.95 + [] [][][] +
+ []
+
+[3]
+This exam contains 5 questions with 50 parts, 0 subparts, and 0 subsubparts.
 This exam has a total of 100 points.
 This exam has a total of 0 bonus points.
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
-(17-clases-mat1-2026 - sol.aux
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
+(36-clases-mat1-mat1-2026.aux
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
 )
  ***********
 LaTeX2e <2025-11-01>
@@ -520,12 +535,12 @@ L3 programming layer <2025-10-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8475 strings out of 402987
- 142053 string characters out of 5448523
- 609916 words of memory out of 5000000
- 37080 multiletter control sequences out of 15000+600000
- 633874 words of font info for 72 fonts, out of 8000000 for 9000
+ 8627 strings out of 402987
+ 143982 string characters out of 5448523
+ 633942 words of memory out of 5000000
+ 37238 multiletter control sequences out of 15000+600000
+ 633850 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 71i,11n,65p,689b,464s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 71i,11n,65p,419b,632s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 17-clases-mat1-2026 - sol.xdv (6 pages, 107224 bytes).
+Output written on 36-clases-mat1-mat1-2026.xdv (3 pages, 52352 bytes).

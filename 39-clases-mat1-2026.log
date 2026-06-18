@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.11.13)  28 MAY 2026 10:08
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.11.13)  18 JUN 2026 09:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/31-clases-mat1-2026 - sol.tex"
-(c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/31-clases-mat1-2026 - sol.tex
+**"c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/39-clases-mat1-2026.tex"
+(c:/Users/rilar/OneDrive - UNI/4 UNI/Primer Semestre 2026/Matematica I/clases-mat1-2026/39-clases-mat1-2026.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
 (C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex/latex/exam\exam.cls
@@ -418,13 +418,13 @@ Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 LaTeX Warning: Unused global option(s):
     [paper].
 
-(31-clases-mat1-2026 - sol.aux
+(39-clases-mat1-2026.aux
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
 (babel)             Reported on input line 10.
 )
-\openout1 = `"31-clases-mat1-2026 - sol.aux"'.
+\openout1 = `39-clases-mat1-2026.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
 LaTeX Font Info:    ... okay on input line 83.
@@ -451,15 +451,15 @@ LaTeX Font Info:    ... okay on input line 83.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(57.81621pt, 467.587pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 614.29501pt, 72.26999pt)
+* h-part:(L,W,R)=(57.81621pt, 482.04079pt, 57.81621pt)
+* v-part:(T,H,B)=(65.04256pt, 643.20366pt, 50.58878pt)
 * \paperwidth=597.6732pt
 * \paperheight=758.83499pt
-* \textwidth=467.587pt
-* \textheight=614.29501pt
+* \textwidth=482.04079pt
+* \textheight=643.20366pt
 * \oddsidemargin=-14.45378pt
 * \evensidemargin=-14.45378pt
-* \topmargin=-21.8pt
+* \topmargin=-29.02744pt
 * \headheight=15.0pt
 * \headsep=6.8pt
 * \topskip=11.0pt
@@ -479,48 +479,38 @@ LaTeX Font Info:    ... okay on input line 83.
 
 LaTeX Info: Redefining \. on input line 83.
 LaTeX Info: Redefining \% on input line 83.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 115.
+
+Overfull \hbox (16.99998pt too wide) in paragraph at lines 91--108
+[][] [] 
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 112.
 (C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 115.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 112.
  (C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 115.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 112.
  (C:\Users\rilar\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Overfull \hbox (17.0pt too wide) in paragraph at lines 122--124
-[][]
- []
-
-
-Overfull \hbox (14.10777pt too wide) in paragraph at lines 135--136
-\TU/lmr/bx/n/10.95 Solución: \TU/lmr/m/n/10.95 Para resolver esta integral mediante el método tabular, identificamos la función polinómica
- []
-
-
-Overfull \hbox (13.32668pt too wide) in paragraph at lines 152--153
-[]\TU/lmr/m/n/10.95 Multiplicando los elementos en diagonal siguiendo las flechas correspondientes a los signos, obtenemos
+Overfull \hbox (17.0pt too wide) in paragraph at lines 119--120
+[][] 
  []
 
 File: fondo.pdf Graphic file (type pdf)
 <use fondo.pdf>
 [1
 
-]
-Overfull \hbox (8.3517pt too wide) in paragraph at lines 175--176
-[]\TU/lmr/m/n/10.95 Para resolver esta nueva integral, aplicamos el método de integración por partes estándar. Definimos: 
- []
-
-[2]
-This exam contains 2 questions with 0 parts, 0 subparts, and 0 subsubparts.
+] [2] [3]
+This exam contains 5 questions with 50 parts, 0 subparts, and 0 subsubparts.
 This exam has a total of 100 points.
 This exam has a total of 0 bonus points.
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
-(31-clases-mat1-2026 - sol.aux
+(39-clases-mat1-2026.aux
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 )
@@ -530,12 +520,12 @@ L3 programming layer <2025-10-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8407 strings out of 402987
- 140921 string characters out of 5448523
- 603917 words of memory out of 5000000
- 37018 multiletter control sequences out of 15000+600000
+ 8630 strings out of 402987
+ 143953 string characters out of 5448523
+ 619932 words of memory out of 5000000
+ 37241 multiletter control sequences out of 15000+600000
  633850 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 71i,11n,65p,420b,383s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 71i,11n,65p,414b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 31-clases-mat1-2026 - sol.xdv (2 pages, 25320 bytes).
+Output written on 39-clases-mat1-2026.xdv (3 pages, 47672 bytes).
