@@ -1,0 +1,237 @@
+\documentclass[11pt,paper=a4,answers, addpoints]{exam}
+\usepackage{graphicx,lastpage}
+\usepackage{upgreek}
+\usepackage{censor}
+\censorruledepth=-.2ex
+\censorruleheight=.1ex
+\hyphenpenalty 10000
+
+\usepackage[paperheight=10.5in,paperwidth=8.27in,bindingoffset=0in,left=0.8in,right=1in, top=1in,bottom=1in,headsep=.5\baselineskip]{geometry}
+
+\flushbottom
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\renewcommand\ULthickness{2pt} 
+\setlength\ULdepth{1.5ex}
+\renewcommand{\baselinestretch}{1}
+\pagestyle{empty}
+
+\pagestyle{headandfoot}
+\headrule
+\newcommand{\continuedmessage}{%
+  \ifcontinuation{\footnotesize Pregunta \ContinuedQuestion\ continua\ldots}{}%
+}
+\runningheader{\footnotesize Departamento de Matemática}
+{\footnotesize Matemática I}
+{\footnotesize Página \thepage\ de \numpages}
+\footrule
+\footer{\footnotesize }
+{}
+{\ifincomplete{\footnotesize Pregunta \IncompleteQuestion\ continúa en la siguiente página \ldots}
+  {\iflastpage{\footnotesize Final del examen}{\footnotesize Por favor vea la siguiente página\ldots}}}
+
+\usepackage{amsfonts,amsmath}
+\usepackage{cleveref}
+\crefname{figure}{figure}{figures}
+\crefname{question}{question}{questions}
+\renewcommand\thequestion{\arabic{question}}
+\renewcommand{\questionlabel}{\thequestion)}
+\renewcommand{\questionshook}{%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\labelwidth}{-\labelsep}%
+}
+\usepackage{amsmath,multicol}
+\decimalpoint
+\nopointsinmargin
+\pointpoints{Punto}{Punto}
+
+\marginpointname{\points}
+\pointformat{\boldmath\themarginpoints}
+\bracketedpoints
+\usepackage{xparse}
+\usepackage{comment}
+
+\pointpoints{punto}{puntos}
+\bonuspointpoints{punto extra}{puntos extra}
+ 
+\totalformat{Pregunta \thequestion: \totalpoints puntos}
+ 
+\hqword{Pregunta}
+\hpgword{Página}
+\hpword{Puntos}
+\hsword{Puntos obtenidos}
+\htword{Total}
+\usepackage{color}
+
+\usepackage{mathrsfs}
+\newcommand{\Laplace}[1]{\ensuremath{\mathscr{L}{\left\lbrace #1\right\rbrace}}}
+\newcommand{\InvLap}[1]{\ensuremath{\mathscr{L}^{-1}{\left\lbrace #1\right\rbrace}}}
+\usepackage{physics}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}
+
+% --- CONFIGURACIÓN DEL FONDO (SOLO PRIMERA PÁGINA) ---
+\usepackage{eso-pic}
+\newcommand\FondoPortada{%
+  \AddToShipoutPictureBG*{ % El asterisco hace que solo sea en la página donde se invoca
+    \AtPageLowerLeft{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{fondo.pdf}%
+    }%
+  }%
+}
+% --------------------------------------------------
+
+\begin{document}
+\FondoPortada % Esto activa el fondo solo para esta página
+\noprintanswers % Modificado según tu preferencia estricta de no mostrar soluciones por defecto
+\shadedsolutions
+\thispagestyle{empty}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución:} }
+\renewcommand{\thepartno}{\arabic{partno}}
+
+\begin{center}
+{\textbf{Examen Parcial 2}}
+\end{center}
+\begin{minipage}[t]{.7\textwidth}%
+  {\bfseries Nombres}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+  {\bfseries Apellidos}: \makebox[.75\textwidth]{\hrulefill} \par
+  \vspace{1ex}
+    {\bfseries Docente}: Ricardo Largaespada \par
+  \vspace{1ex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{.3\textwidth}%
+  {\bfseries Curso}: Matemática I\par
+  \vspace{1ex}
+  {\bfseries Fecha}: 26 de junio 2026 \par
+  \vspace{1ex}
+  {\bfseries Grupo}: 1M6-SIS\par
+  \vspace{1ex}
+\end{minipage}%
+\begin{center}
+  \rule{\textwidth}{1pt}
+\end{center}
+
+\noindent\underline{\sc Instrucciones a estudiantes}
+\begin{enumerate}
+\item Este examen contiene {\bf TRES (3)} preguntas. Debe mostrar todo su procedimiento de forma ordenada.
+\item Puede utilizar calculadora científica. No se permite el uso de calculadoras gráficas ni teléfonos celulares.
+\item Para el bosquejo gráfico, utilice la cuadrícula proporcionada, trace los ejes y rotule los puntos notables.
+\end{enumerate}
+
+\rule[1ex]{\textwidth}{1pt}
+
+\qformat{Pregunta \thequestion: \thequestiontitle\dotfill\thepoints}
+\pointname{\%}
+
+\begin{questions}
+
+% Problema 1
+\question Calcule la longitud de arco de la curva $y = \frac{2}{3}x^{3/2}$ en el intervalo $0 \le x \le 3$.
+
+%\begin{center}
+%\begin{tikzpicture}[scale=1.5]
+%    % Ejes
+%    \draw[->] (-0.2,0) -- (3.5,0) node[right] {$x$};
+%    \draw[->] (0,-0.2) -- (0,4) node[above] {$y$};
+%    % Curva
+%    \draw[domain=0:3, smooth, samples=100, variable=\x, blue, thick] plot ({\x}, {0.6667*(\x)^1.5});
+%    % Líneas guía y etiquetas
+%    \draw[dashed] (3,0) node[below] {$3$} -- (3,3.464);
+%    \draw[dashed] (0,3.464) node[left] {$2\sqrt{3}$} -- (3,3.464);
+%\end{tikzpicture}
+%\end{center}
+
+\begin{solution}
+La fórmula de la longitud de arco es $L = \int_a^b \sqrt{1 + [f'(x)]^2} \, dx$. \\
+Calculamos la derivada de la función: 
+\[ f'(x) = \frac{2}{3} \cdot \frac{3}{2}x^{1/2} = x^{1/2} \]
+Elevando al cuadrado: $[f'(x)]^2 = x$. \\
+Planteamos la integral:
+\[ L = \int_0^3 \sqrt{1 + x} \, dx \]
+Para resolver, aplicamos la sustitución simple $u = 1 + x$, donde $du = dx$. \\
+Los nuevos límites de integración serían de $u=1$ hasta $u=4$.
+\[ L = \int_1^4 u^{1/2} \, du \]
+Integrando aplicando la regla de la potencia:
+\[ L = \left[ \frac{2}{3}u^{3/2} \right]_1^4 \]
+Evaluando los límites:
+\[ L = \frac{2}{3}(4^{3/2}) - \frac{2}{3}(1^{3/2}) = \frac{2}{3}(8) - \frac{2}{3}(1) = \frac{16}{3} - \frac{2}{3} = \frac{14}{3} \approx 4.6667 \]
+\end{solution}
+
+\vspace{5mm}
+
+% Problema 2
+\question Determine el volumen del sólido generado al rotar alrededor del eje $y$ la región en el primer cuadrante acotada por la curva $y = e^{-x^2}$, el eje $x$ y la recta $x = 1$.
+
+%\begin{center}
+%\begin{tikzpicture}[scale=2.5]
+%    % Ejes
+%    \draw[->] (-0.2,0) -- (1.5,0) node[right] {$x$};
+%    \draw[->] (0,-0.2) -- (0,1.3) node[above] {$y$};
+%    % Región sombreada
+%    \fill[blue!10] (0,0) -- plot[domain=0:1, samples=100] ({\x}, {exp(-\x*\x)}) -- (1,0) -- cycle;
+%    % Curva
+%    \draw[domain=0:1.2, smooth, samples=100, variable=\x, blue, thick] plot ({\x}, {exp(-\x*\x)});
+%    % Etiquetas
+%    \draw[dashed] (1,0) node[below] {$1$} -- (1,0.3678);
+%    \node[left] at (0,1) {$1$};
+%\end{tikzpicture}
+%\end{center}
+
+\begin{solution}
+Para rotaciones alrededor del eje $y$, utilizaremos el método de cascarones cilíndricos. El diferencial de volumen es $dV = 2\pi x f(x) \, dx$.
+Planteamos la integral:
+\[ V = \int_0^1 2\pi x e^{-x^2} \, dx \]
+Aplicamos el cambio de variable $u = -x^2$, de donde obtenemos que $du = -2x \, dx$. \\
+Los nuevos límites de integración son: \\
+Si $x = 0 \implies u = 0$ \\
+Si $x = 1 \implies u = -1$ \\
+Sustituyendo en la integral:
+\[ V = -\pi \int_0^{-1} e^u \, du \]
+Podemos invertir los límites de integración cambiando el signo:
+\[ V = \pi \int_{-1}^0 e^u \, du \]
+Integrando:
+\[ V = \pi \Big[ e^u \Big]_{-1}^0 = \pi (e^0 - e^{-1}) = \pi \left(1 - \frac{1}{e}\right) \]
+\end{solution}
+
+\vspace{5mm}
+
+% Problema 3
+\question Halle el área de la región comprendida entre la curva $y = x\cos(x)$ y el eje $x$, en el intervalo de $x = 0$ a $x = \frac{\pi}{2}$.
+
+%\begin{center}
+%\begin{tikzpicture}[scale=2]
+%    % Ejes
+%    \draw[->] (-0.2,0) -- (2,0) node[right] {$x$};
+%    \draw[->] (0,-0.2) -- (0,1) node[above] {$y$};
+%    % Región sombreada
+%    \fill[blue!10] (0,0) -- plot[domain=0:1.5708, samples=100] ({\x}, {\x*cos(\x*180/pi)}) -- (1.5708,0) -- cycle;
+%    % Curva
+%    \draw[domain=0:1.5708, smooth, samples=100, variable=\x, blue, thick] plot ({\x}, {\x*cos(\x*180/pi)});
+%    % Etiquetas
+%    \node[below] at (1.5708,0) {$\pi/2$};
+%\end{tikzpicture}
+%\end{center}
+
+\begin{solution}
+El área de la región está dada por la integral definida:
+\[ A = \int_0^{\pi/2} x\cos(x) \, dx \]
+Resolvemos la integral mediante el método de integración por partes. \\
+Sea $u = x \implies du = dx$ \\
+Sea $dv = \cos(x) \, dx \implies v = \sin(x)$ \\
+Aplicando la fórmula $\int u \, dv = uv - \int v \, du$:
+\[ \int x\cos(x) \, dx = x\sin(x) - \int \sin(x) \, dx \]
+Integrando nuevamente:
+\[ \int x\cos(x) \, dx = x\sin(x) - (-\cos(x)) = x\sin(x) + \cos(x) \]
+Evaluamos la antiderivada en los límites de $0$ a $\pi/2$:
+\[ A = \left[ \frac{\pi}{2}\sin\left(\frac{\pi}{2}\right) + \cos\left(\frac{\pi}{2}\right) \right] - \Big[ 0\cdot\sin(0) + \cos(0) \Big] \]
+Sabiendo que $\sin(\pi/2) = 1$, $\cos(\pi/2) = 0$ y $\cos(0) = 1$:
+\[ A = \left( \frac{\pi}{2}(1) + 0 \right) - \Big( 0 + 1 \Big) = \frac{\pi}{2} - 1 \]
+\end{solution}
+
+\end{questions}
+
+\end{document}
