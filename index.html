@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal de consulta de calificaciones privadas para estudiantes de la asignatura de Matemática I (Grupo 1M6-SIS 2026).">
+  <title>Consulta de Calificaciones - Matemática I - 1M6-SIS 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema visual" title="Cambiar tema visual">
+    <!-- Icon loaded dynamically by JS -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+  </button>
+
+  <!-- Animated Aurora Background Blobs -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <main>
+    <!-- Page Header -->
+    <header>
+      <span class="course-code">Matemática I • 1M6-SIS 2026</span>
+      <h1>Portal de Calificaciones</h1>
+      <p>Consulta tus notas de forma segura e individual</p>
+    </header>
+
+    <!-- VIEW 1: Query Form -->
+    <section id="query-view" class="glass-card">
+      <form id="query-form" novalidate>
+        <div class="form-group">
+          <label for="student-email">Correo Electrónico Registrado</label>
+          <div class="input-container">
+            <input 
+              type="email" 
+              id="student-email" 
+              placeholder="estudiante@ejemplo.com" 
+              required 
+              autocomplete="email"
+              spellcheck="false"
+            >
+            <!-- Mail Icon SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+        </div>
+
+        <button type="submit" id="search-btn" class="btn-primary">
+          <span id="search-btn-text">Consultar Notas</span>
+          <div id="search-spinner" class="spinner"></div>
+        </button>
+      </form>
+
+      <!-- Error message container -->
+      <div id="error-msg" class="error-msg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/>
+        </svg>
+        <span class="error-text">El correo ingresado no es válido.</span>
+      </div>
+    </section>
+
+    <!-- VIEW 2: Student Dashboard Results -->
+    <section id="results-view" class="glass-card">
+      <!-- Student Profile Header -->
+      <div class="results-header">
+        <div class="student-info">
+          <h2 id="student-name">Nombre Estudiante</h2>
+          <p id="student-email-display">correo@estudiante.com</p>
+        </div>
+        <span id="status-badge" class="status-badge aprobado">Aprobado</span>
+      </div>
+
+      <!-- Main Dashboard Grid -->
+      <div class="dashboard-grid">
+        <!-- Circular Progress Chart for Final Score -->
+        <div class="score-circle-card">
+          <div class="circle-progress-wrapper">
+            <svg class="circle-svg" viewBox="0 0 160 160">
+              <circle class="circle-bg" cx="80" cy="80" r="70"></circle>
+              <circle class="circle-progress" cx="80" cy="80" r="70"></circle>
+            </svg>
+            <div class="circle-score-text">
+              <span id="final-score-num" class="score-num">0</span>
+              <span class="score-max">/ 100 PTS</span>
+            </div>
+          </div>
+          <span class="circle-card-title">Nota Final Obtenida</span>
+        </div>
+
+        <!-- Detailed Partials Grid -->
+        <div class="scores-detail-grid">
+          <!-- Acumulado 1 -->
+          <div class="score-detail-item">
+            <div class="detail-label">Acumulado 1</div>
+            <div class="detail-val-row">
+              <span id="val-ac1" class="detail-score">0</span>
+              <span class="detail-max">/ 35 pts</span>
+            </div>
+            <div class="progress-bar-container">
+              <div id="bar-ac1" class="progress-bar-fill"></div>
+            </div>
+          </div>
+
+          <!-- Examen 1 -->
+          <div class="score-detail-item">
+            <div class="detail-label">Examen Parcial 1</div>
+            <div class="detail-val-row">
+              <span id="val-ex1" class="detail-score">0</span>
+              <span class="detail-max">/ 15 pts</span>
+            </div>
+            <div class="progress-bar-container">
+              <div id="bar-ex1" class="progress-bar-fill"></div>
+            </div>
+          </div>
+
+          <!-- Acumulado 2 -->
+          <div class="score-detail-item">
+            <div class="detail-label">Acumulado 2</div>
+            <div class="detail-val-row">
+              <span id="val-ac2" class="detail-score">0</span>
+              <span class="detail-max">/ 35 pts</span>
+            </div>
+            <div class="progress-bar-container">
+              <div id="bar-ac2" class="progress-bar-fill"></div>
+            </div>
+          </div>
+
+          <!-- Examen 2 -->
+          <div class="score-detail-item">
+            <div class="detail-label">Examen Parcial 2</div>
+            <div class="detail-val-row">
+              <span id="val-ex2" class="detail-score">0</span>
+              <span class="detail-max">/ 15 pts</span>
+            </div>
+            <div class="progress-bar-container">
+              <div id="bar-ex2" class="progress-bar-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <p id="status-text" style="margin-top: 1.5rem; font-size: 0.95rem; font-weight: 500; color: var(--text-secondary);"></p>
+        <button id="btn-back" class="btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+          Consultar otro estudiante
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Departamento de Matemática • Universidad Nacional de Ingeniería (UNI)</p>
+    <div class="privacy-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--success);">
+        <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      <span>Privacidad protegida localmente mediante cifrado SHA-256</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Load the generated grades database -->
+  <script src="grades_data.js"></script>
+  <!-- Load the main application logic -->
+  <script src="app.js"></script>
+</body>
+</html>

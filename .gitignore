@@ -24,3 +24,10 @@
 
 # Script de compilacion local
 compilar.bat
+
+# Excel files (student records) and temp python scripts
+*.xlsx
+*.xls
+inspect_excel.py
+search_grading.py
+
